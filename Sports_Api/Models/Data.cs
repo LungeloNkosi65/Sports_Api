@@ -12,7 +12,35 @@ namespace Sports_Api.Models
         public static List<Tournament> TournamentsList = Tournaments();
         public static List<SportTournament> SportTournamentsList = SportTournaments();
 
-     
+        public static List<SportsTree> SportsList = Sports();
+        public static List<SportsTree> Sports()
+        {
+            SportsList = new List<SportsTree>()
+            {
+                new SportsTree(1, "Betgames Africa", "https://new.hollywoodbets.net/assets/images/icons/Betgames.svg"),
+                new SportsTree(2, "Live In-Play", "https://new.hollywoodbets.net/assets/images/icons/live-in-play.svg"),
+                new SportsTree(3, "Sport Exotics", "https://new.hollywoodbets.net/assets/images/icons/sport-exotics.svg"),
+                new SportsTree(4, "Horse Racing", "https://new.hollywoodbets.net/assets/images/icons/horse-racing.svg"),
+                new SportsTree(5, "Soccer", "https://new.hollywoodbets.net/assets/images/icons/soccer.svg"),
+                new SportsTree(6, "Lucky Numbers", "https://new.hollywoodbets.net/assets/images/icons/lucky-numbers.svg"),
+                new SportsTree(7, "Rugby", "https://new.hollywoodbets.net/assets/images/icons/rugby.svg"),
+                new SportsTree(8, "Cricket", "https://new.hollywoodbets.net/assets/images/icons/cricket.svg"),
+                new SportsTree(9, "Golf", "https://new.hollywoodbets.net/assets/images/icons/golf.svg"),
+                new SportsTree(10, "Aussie Rules", "https://new.hollywoodbets.net/assets/images/icons/aussie-rules.svg"),
+                new SportsTree(11, "Bandy", "https://new.hollywoodbets.net/assets/images/icons/bandy.svg"),
+                new SportsTree(12, "BasketBall", "https://new.hollywoodbets.net/assets/images/icons/basketball.svg"),
+                new SportsTree(13, "Bowls", "https://new.hollywoodbets.net/assets/images/icons/bowls.svg"),
+                new SportsTree(14, "Boxing", "https://new.hollywoodbets.net/assets/images/icons/boxing.svg"),
+                new SportsTree(15, "Darts", "https://new.hollywoodbets.net/assets/images/icons/darts.svg"),
+                new SportsTree(16, "Futsal", "https://new.hollywoodbets.net/assets/images/icons/futsal.svg"),
+                new SportsTree(17, "Ice Hockey", "https://new.hollywoodbets.net/assets/images/icons/ice-hockey.svg"),
+                new SportsTree(18, "MMA", "https://new.hollywoodbets.net/assets/images/icons/mma.svg"),
+                new SportsTree(19, "Motorsport", "https://new.hollywoodbets.net/assets/images/icons/motorsport.svg"),
+                new SportsTree(20, "Table Tennis", "https://new.hollywoodbets.net/assets/images/icons/sport-exotics.svg"),
+                new SportsTree(21, "Vollyball", "https://new.hollywoodbets.net/assets/images/icons/volleyball.svg")
+            };
+            return SportsList;
+        }
         public static List<SportsCountry> SportsCountries()
         {
             SportsCountList = new List<SportsCountry>()
@@ -22,7 +50,15 @@ namespace Sports_Api.Models
                 new SportsCountry(3,1),
                 new SportsCountry(1,2),
                new SportsCountry(2,3),
-                new SportsCountry(3,4)
+                new SportsCountry(3,4),
+                new SportsCountry(5,1),
+                 new SportsCountry(5,2),
+                  new SportsCountry(5,3),
+                   new SportsCountry(5,4),
+                    new SportsCountry(5,5),
+                     new SportsCountry(5,6),
+
+
             };
             return SportsCountList;
         }
@@ -39,12 +75,17 @@ namespace Sports_Api.Models
         {
             CountrList = new List<Country>()
             {
-                new Country(1,"South Africa","SA"),
-                new Country(2,"France","FRA"),
+                new Country(1,"South Africa","ZA"),
+                new Country(2,"France","FR"),
                 new Country(3,"England","ENG"),
                 new Country(4,"Spain","SPN"),
-                new Country(5,"Germany","GMN"),
-                  new Country(6,"Wales","GMN")
+                new Country(5,"Germany","DE"),
+                new Country(6,"Wales","WLS"),
+                new Country(7,"Finland","FI"),
+                new Country(8,"Italy","IT"),
+                new Country(9,"Cambodia","KH")
+
+
             };
             return CountrList;
         }
@@ -68,7 +109,8 @@ namespace Sports_Api.Models
                 new Tournament(14,"WRU Division Two East"),
                 new Tournament(15,"Masters"),
                 new Tournament(16,"PGA Championship"),
-                new Tournament(17,"U.S. Open")
+                new Tournament(17,"U.S. Open"),
+                new Tournament(18,"UEFA")
             };
         }
         public static List<SportTournament> SportTournaments()
@@ -80,8 +122,8 @@ namespace Sports_Api.Models
                 new SportTournament(2,1,1),
                 new SportTournament(5,4,1),
                 new SportTournament(5,1,3),
-                new SportTournament(5,2,1),
-                new SportTournament(5,4,3),
+                new SportTournament(5,2,2),
+                new SportTournament(5,3,3),
                 new SportTournament(5,1,4)
             };
         }

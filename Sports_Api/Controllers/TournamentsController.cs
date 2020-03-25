@@ -14,6 +14,7 @@ namespace Sports_Api.Controllers
     [ApiController]
     public class TournamentsController : ControllerBase
     {
+        
         [HttpGet]
         public IEnumerable<Tournament> Get(int? sportId,int ? countryId)
         {

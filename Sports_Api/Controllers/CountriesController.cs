@@ -12,9 +12,12 @@ namespace Sports_Api.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
-       
-        [HttpGet]
-
+       [HttpGet]
+       public IEnumerable<Country> Get()
+       {
+            return Data.Countries().ToArray();
+       }
+        [HttpGet("{id}")]
         public IEnumerable<Country>Get(int ? id)
         {
             return Data.GetCountries(id).ToArray();
