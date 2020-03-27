@@ -17,5 +17,22 @@ namespace Sports_Api.Logic
             return matchedTournament;
 
         }
+
+        public static IEnumerable<BetTyp>GetBetypeByTournament(int ? tournamentId)
+        {
+            var Tournamanets = Data.Tournaments().Where(x => x.TournamentId == tournamentId);
+
+            var matched = from betTyp in Data.TournamentBets()
+                          where Tournamanets.Any(x => x.TournamentId == betTyp.TournamentId)
+                          select betTyp.BetTypes;
+
+            var matchedBetype = from bet in Data.BetTyps()
+                                where matched.Any(x => x.Contains(bet.BetTypId))
+                                select bet;
+            return matchedBetype;
+
+        }
+
+      
     }
 }

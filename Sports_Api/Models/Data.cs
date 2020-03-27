@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sports_Api.Models
 {
@@ -11,6 +10,7 @@ namespace Sports_Api.Models
         public static List<SportsCountry> SportsCountList = SportsCountries();
         public static List<Tournament> TournamentsList = Tournaments();
         public static List<SportTournament> SportTournamentsList = SportTournaments();
+        public static List<Event> EventsList = Events();
 
         public static List<SportsTree> SportsList = Sports();
         public static List<SportsTree> Sports()
@@ -62,6 +62,8 @@ namespace Sports_Api.Models
             };
             return SportsCountList;
         }
+        public static List<BetTyp> BetTypsList = BetTyps();
+        public static List<TournamentBetType> TournamentBetTypesList = TournamentBets();
 
         public static IEnumerable<Country> GetCountries(int? id)
         {
@@ -125,6 +127,51 @@ namespace Sports_Api.Models
                 new SportTournament(5,2,2),
                 new SportTournament(5,3,3),
                 new SportTournament(5,1,4)
+            };
+        }
+        public static List<Event> Events()
+        {
+            return EventsList = new List<Event>()
+            {
+                new Event(1,1,"Atletico Bilbao vs Real Betis",new DateTime(2020, 3, 26, 7, 20, 0)),
+                new Event(2,1,"Celta Vigo vs Real Betis",new DateTime(2020, 3, 27, 7, 20, 0)),
+                new Event(3,1,"Getafe  vs Eibar",new DateTime(2020, 3, 29, 7, 20, 0)),
+                new Event(4,1,"Real Sociedad  vs Real Madrid",new DateTime(2020, 3, 30, 7, 20, 0)),
+                new Event(5,2,"English vs Afrikans",new DateTime(2020, 3, 31, 7, 20, 0)),
+                new Event(6,2,"Batman vs Superman",new DateTime(2020, 4, 01, 7, 20, 0)),
+                new Event(7,2,"Flash vs Batman",new DateTime(2020, 3, 26, 7, 20, 0)),
+                new Event(8,4,"Chiefs vs Orlando Pirates",new DateTime(2020, 3, 26, 7, 20, 0)),
+                new Event(8,4,"Chiefs vs SunDowns",new DateTime(2020, 3, 26, 7, 20, 0)),
+                new Event(8,4,"Amazulu vs Orlando Pirates",new DateTime(2020, 3, 26, 7, 20, 0))
+
+            };
+        }
+
+        public static IEnumerable<Event>EventsByToournament(int ? tournamentId)
+        {
+            return Events().Where(x => x.TournamentId == tournamentId);
+        }
+        public static List<BetTyp> BetTyps()
+        {
+            return BetTypsList = new List<BetTyp>()
+            {
+                new BetTyp(1,"Full Time"),
+                new BetTyp(2,"Double Chance"),
+                new BetTyp(3,"Both Teams To Score"),
+                new BetTyp(4,"Half Time"),
+                new BetTyp(5,"Handicap"),
+            };
+        }
+        public static List<TournamentBetType> TournamentBets()
+        {
+            return TournamentBetTypesList = new List<TournamentBetType>()
+            {
+                new TournamentBetType(1,1, new List<int>{ 1,2,3,4,5}),
+                new TournamentBetType(1,2, new List<int>{ 1,2,3}),
+                new TournamentBetType(1,3, new List<int>{ 1,2,5}),
+                new TournamentBetType(1,4, new List<int>{ 1,2,3,4,5}),
+                new TournamentBetType(1,5, new List<int>{ 1,2,3,4,5})
+
             };
         }
 
