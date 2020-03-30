@@ -64,6 +64,8 @@ namespace Sports_Api.Models
         }
         public static List<BetTyp> BetTypsList = BetTyps();
         public static List<TournamentBetType> TournamentBetTypesList = TournamentBets();
+        public static List<Market> MarketsList = Markets();
+        public static List<BetTypeMarket>BetTypeMarketsList=BetTypeMarkets();
 
         public static IEnumerable<Country> GetCountries(int? id)
         {
@@ -171,6 +173,39 @@ namespace Sports_Api.Models
                 new TournamentBetType(1,3, new List<int>{ 1,2,5}),
                 new TournamentBetType(1,4, new List<int>{ 1,2,3,4,5}),
                 new TournamentBetType(1,5, new List<int>{ 1,2,3,4,5})
+
+            };
+        }
+
+        public static List<Market> Markets()
+        {
+            return new List<Market>()
+            {
+                new Market(1,"Home"),
+                new Market(2,"Draw"),
+                new Market(3,"Away"),
+                new Market(4,"HomeDraw /Yes"),
+                new Market(5,"HomeDraw  /Yes"),
+                new Market(6,"AwayDraw /Yes"),
+                new Market(7,"AwayDraw /No"),
+                new Market(8,"HomeAway /Yes"),
+                new Market(9,"HomeAway /No"),
+                new Market (10,"Home Hc"),
+                new Market (11,"Draw Hc"),
+                new Market (12,"Away Hc"),
+                new Market(13,"Yes"),
+                new Market(14,"No"),
+            };
+        }
+        public static List<BetTypeMarket> BetTypeMarkets()
+        {
+            return BetTypeMarketsList = new List<BetTypeMarket>()
+            {
+                new BetTypeMarket(1,1,new List<int>{1,2,3}),
+                new BetTypeMarket(2,2,new List<int>{4,5,6,7,8,9}),
+                new BetTypeMarket(3,4,new List<int>{1,2,2}),
+                new BetTypeMarket(4,3, new List<int>{13,14}),
+                new BetTypeMarket(5,5,new List<int>{10,11,12 })
 
             };
         }

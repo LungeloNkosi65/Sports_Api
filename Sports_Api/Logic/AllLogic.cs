@@ -32,6 +32,16 @@ namespace Sports_Api.Logic
             return matchedBetype;
 
         }
+        public static IEnumerable<Market>GetMarketForBetType(int ? betTypeId)
+        {
+            var BetTypeMarket = from betMarket in Data.BetTypeMarkets()
+                                where betMarket.BetTypeId == betTypeId
+                                select betMarket.Markets;
+            var matched = from market in Data.Markets()
+                          where BetTypeMarket.Any(x => x.Contains(market.MarketId))
+                          select market;
+            return matched;
+        }
 
       
     }
