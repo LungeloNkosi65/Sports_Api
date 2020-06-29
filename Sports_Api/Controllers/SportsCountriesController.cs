@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sports_Api.Models;
+using Sports_Api.Services;
 
 namespace Sports_Api.Controllers
 {
@@ -12,16 +12,18 @@ namespace Sports_Api.Controllers
     [ApiController]
     public class SportsCountriesController : ControllerBase
     {
-        public IEnumerable<Country> Get(int id)
+        private readonly ICountryService _countryService;
+
+        public SportsCountriesController(ICountryService countryService)
         {
-            if (id == null)
-            {
-                return Data.GetCountries(id);
-            }
-            else
-            {
-                return Data.Countries();
-            }
+            _countryService = countryService;
+        }
+        [HttpGet("{sportId}")]
+        public IEnumerable<Country> Get(int  sportId)
+        {
+          
+                return _countryService.CountryForSport(sportId);
+          
         }
 
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sports_Api.Models;
+using Sports_Api.Services;
 
 namespace Sports_Api.Controllers
 {
@@ -15,12 +15,22 @@ namespace Sports_Api.Controllers
     public class SportsController : ControllerBase
     {
 
-        
+        private readonly ISportService _sportService;
+        public SportsController(ISportService sportService)
+        {
+            _sportService = sportService;
+        }
         [HttpGet]
         public IEnumerable<SportsTree> Get()
         {
-            return Data.Sports().ToArray();
+            return _sportService.Get();
         }
-       
+
+        [HttpGet("{id}")]
+        public IEnumerable<SportsTree>Get(int? id)
+        {
+            return _sportService.Get(id);
+        }
+
     }
 }

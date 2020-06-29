@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sports_Api.Repository;
+using Sports_Api.Services;
 
 namespace Sports_Api
 {
@@ -32,7 +35,17 @@ namespace Sports_Api
                        .AllowAnyHeader();
             }));
             services.AddControllers();
-
+            services.AddDbContext<HollywoodBetsRepDbContext>(options =>
+                             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                options.JsonSerializerOptions.DictionaryKeyPolicy = null;
+            });
+            services.AddScoped<ISportRepository, SportRepository>();
+            services.AddScoped<ISportService, SportService>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ICountryService, CountryService>();
 
         }
 

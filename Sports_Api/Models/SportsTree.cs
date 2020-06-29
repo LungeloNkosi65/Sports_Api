@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Sports_Api.Models
+namespace Sports_Api
 {
-    public class SportsTree
+    public partial class SportsTree
     {
+        public SportsTree()
+        {
+            SportCountry = new HashSet<SportCountry>();
+            SportsTournament = new HashSet<SportsTournament>();
+        }
+
         public int SportId { get; set; }
         public string Name { get; set; }
         public string Logo { get; set; }
-        
-        public SportsTree(int id, string name,string logo)
-        {
-            SportId = id;
-            Name = name;
-            Logo = logo;
-        }
+
+        public virtual ICollection<SportCountry> SportCountry { get; set; }
+        public virtual ICollection<SportsTournament> SportsTournament { get; set; }
     }
 }

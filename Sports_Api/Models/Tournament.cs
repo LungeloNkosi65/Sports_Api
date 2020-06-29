@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Sports_Api.Models
+namespace Sports_Api
 {
-    public class Tournament
+    public partial class Tournament
     {
+        public Tournament()
+        {
+            Event = new HashSet<Event>();
+            SportsTournament = new HashSet<SportsTournament>();
+            TournamentBetType = new HashSet<TournamentBetType>();
+        }
+
         public int TournamentId { get; set; }
         public string Name { get; set; }
-        public Tournament(int id,string name)
-        {
-            TournamentId = id;
-            Name = name;
-        }
+
+        public virtual ICollection<Event> Event { get; set; }
+        public virtual ICollection<SportsTournament> SportsTournament { get; set; }
+        public virtual ICollection<TournamentBetType> TournamentBetType { get; set; }
     }
 }

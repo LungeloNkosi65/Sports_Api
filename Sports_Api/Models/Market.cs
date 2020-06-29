@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Sports_Api.Models
+namespace Sports_Api
 {
-    public class Market
+    public partial class Market
     {
+        public Market()
+        {
+            BetTypeMarket = new HashSet<BetTypeMarket>();
+        }
+
         public int MarketId { get; set; }
         public string MarketName { get; set; }
-        public Market(int marketId,string marketName)
-        {
-            MarketId = marketId;
-            MarketName = marketName;
-        }
+
+        public virtual ICollection<BetTypeMarket> BetTypeMarket { get; set; }
     }
 }
