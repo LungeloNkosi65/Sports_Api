@@ -29,10 +29,10 @@ namespace Sports_Api.Controllers
             return _countryService.Get(countryId);
         }
 
-        //[HttpGet("{sportId}")]
-        //public IEnumerable<Country>GetSportCountry(int ? sportId)
-        //{
-        //    return _countryService.CountryForSport(sportId);
-        //}
+        [Route("GetSportCountry")]
+        public IEnumerable<Country> GetSportCountry(int sportId)
+        {
+            return _countryService.CountryForSport(sportId);
+        }
     }
 }

@@ -12,8 +12,8 @@
 //        {
 //            var sportTournament = Data2.SportTournaments().Where(x => x.CountryId == countryId && x.SportId == sportId);
 //            var matchedTournament = from tournament in Data2.Tournaments()
-//                                    where sportTournament.Any(x => x.TournamentId == tournament.TournamentId)
-//                                    select tournament;
+//                                    were sportTournament.Any(x => x.TournamentId == tournament.TournamentId)
+//                                    sehlect tournament;
 //            return matchedTournament;
 
 //        }
