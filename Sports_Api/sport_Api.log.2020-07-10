@@ -1,0 +1,232 @@
+2020-07-10 11:59:11,847 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Post Request failed for tornament
+ 2020-07-10 11:59:50,308  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament added to database
+ 2020-07-10 11:59:50,328 ERROR Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 50) (DbType = AnsiString)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Tournament] ([TournamentId], [Name])
+VALUES (@p0, @p1);
+ 2020-07-10 11:59:50,351 ERROR Microsoft.EntityFrameworkCore.Update.? [?] - MESSAGE: An exception occurred in the database while saving changes for context type 'Sports_Api.HollywoodBetsRepDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'HollywoodBetsRepDb.dbo.Tournament'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:d3bcd431-1fcc-4300-971c-30964cd2b8aa
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'HollywoodBetsRepDb.dbo.Tournament'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:d3bcd431-1fcc-4300-971c-30964cd2b8aa
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-07-10 11:59:50,437 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Post Request failed for tornament
+ 2020-07-10 12:00:48,368  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament added to database
+ 2020-07-10 12:05:45,518  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 51 deleted
+ 2020-07-10 12:08:21,492  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 51 deleted
+ 2020-07-10 12:24:06,633  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-10 12:24:06,717  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-10 12:24:06,720  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\Source\Repos\Sports_Api\Sports_Api
+ 2020-07-10 12:24:10,516  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-10 12:42:05,829  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 51 deleted
+ 2020-07-10 12:42:44,400  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 51 deleted
+ 2020-07-10 12:46:27,455  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-10 12:46:27,486  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-10 12:46:27,490  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\Source\Repos\Sports_Api\Sports_Api
+ 2020-07-10 12:46:28,327  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-10 12:46:41,624  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 51 deleted
+ 2020-07-10 12:47:00,624  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 50 deleted
+ 2020-07-10 13:19:43,917  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-10 13:19:44,621  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-10 13:19:44,627  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\Source\Repos\Sports_Api\Sports_Api
+ 2020-07-10 13:19:59,217  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-10 13:59:26,708  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 13:59:26,904  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 13:59:42,294 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 13:59:54,151 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:00:52,545  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:00:56,150  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:00:59,014  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:01,164  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:03,713  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:06,007  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:17,152  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:27,077  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:33,085  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:37,959  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:44,990  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:48,251  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:01:55,940  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:02:03,502  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:00,577  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:08,750  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:14,078  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:18,859  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:21,242  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:25,521  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:28,619  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:31,964  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:45,702  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:03:52,740  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:04:04,046  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:04:06,373  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:04:50,471  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:04:57,957 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:05:33,627  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:16,357  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:21,514  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:29,007  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:31,506  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:47,838  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:16:58,237  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:17:05,554  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:17:18,201  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:17:36,146  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:17:40,634 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:18:33,581  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:18:35,923 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:19:52,808  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:20:02,995  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:20:48,019  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:20:52,752  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:21:06,439  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:21:08,285 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:21:38,375  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:21:55,021  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:22:11,992  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:22:14,354 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:22:34,428  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:00,537  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:13,458  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:21,204  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:24,357  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:29,009  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:46,340  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:23:48,425 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:24:03,594  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:24:06,741 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:24:48,149  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:24:59,384  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:25:01,503 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:25:04,935  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:25:18,585  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:26:45,469  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:26:54,628  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:26:56,989 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:27:19,709  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:27:22,400 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:27:31,858  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:27:36,454  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:27:49,139 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:28:04,998  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:44:11,578  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:47:15,662  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:47:39,656 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:47:56,793  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:47:58,980 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:48:29,570  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:48:43,495  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:48:48,686  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:49:00,581  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:49:22,299  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:49:27,619 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:50:09,518  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:50:25,096  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:50:29,415  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:50:33,679 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:50:35,505  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:50:52,582  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:50:53,868  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:50:55,812 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:51:42,139  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:51:52,152 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:52:21,667  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:52:24,861 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:55:09,415  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:55:20,442  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:55:27,714  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:55:36,228  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:55:46,780  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:56:23,674  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:56:27,800  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:57:42,592  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:58:02,618  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:58:10,193 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:58:13,727  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:58:16,384  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:58:18,864 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:58:22,096  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:59:24,388  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 14:59:26,413 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:59:32,228  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 14:59:33,982 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 14:59:36,700 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:00:32,026  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:00:36,549  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:00:38,770 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:00:40,937 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:00:42,697  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-07-10 15:01:02,345  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:01:09,323  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:01:35,381 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:02:04,347  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:02:11,779  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:02:13,296 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:02:53,536  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:03:09,489  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:03:25,711  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:03:29,670  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:03:45,645  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:04:03,589  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:04:13,025  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:04:17,834  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:04:20,467 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:04:25,254 ERROR Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for specific tournamants failed
+ 2020-07-10 15:04:36,078  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:05:00,187  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:05:05,658  INFO Sports_Api.Controllers.CountriesController.? [?] - MESSAGE: 5 reqiested countries the sport is offerd in
+ 2020-07-10 15:05:16,644  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 

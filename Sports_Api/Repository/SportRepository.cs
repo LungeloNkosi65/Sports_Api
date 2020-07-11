@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using Sports_Api.Services;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,19 @@ namespace Sports_Api.Repository
         {
             _context = hollywoodBetsRepDbContext;
         }
+
+        public void Add(SportsTree sportsTree)
+        {
+            _context.SportsTree.Add(sportsTree);
+            _context.SaveChanges();
+        }
+
+        public void delete(int? sportId)
+        {
+            var dbRecord = Find(sportId);
+            _context.SportsTree.Remove(dbRecord);
+        }
+
         public SportsTree Find(int? id)
         {
             return _context.SportsTree.Find(id);
@@ -31,15 +45,14 @@ namespace Sports_Api.Repository
 
         public IQueryable<SportsTree> Get(int? id)
         {
-            try
-            {
-                return _context.SportsTree.Where(x => x.SportId == id);
-            }
-            catch (Exception)
-            {
+            return _context.SportsTree.Where(x => x.SportId == id);
+            
+        }
 
-                throw;
-            }
+        public void udate(SportsTree sportsTree)
+        {
+            _context.Entry(sportsTree).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

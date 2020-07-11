@@ -10,6 +10,10 @@ namespace Sports_Api.Services
         IQueryable<SportsTree> Get();
         IQueryable<SportsTree> Get(int? id);
         SportsTree Find(int? id);
+        void Add(SportsTree sportsTree);
+
+        void update(SportsTree sportsTree);
+        void delete(int? sportId);
 
     }
 }

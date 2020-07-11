@@ -26,31 +26,19 @@ namespace Sports_Api.Repository
         public IQueryable<Event> GetEventsForTournament(int? tournamentId)
         {
 
-            try
-            {
+            
                 string commandText = $"[dbo].[GetEventsForTournament] @tournamentId={tournamentId}";
                 return ExecuteSql(commandText);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+         
 
         }
 
         public IQueryable<Event> GetSingleEvent(int? eventId)
         {
-            try
-            {
+           
                 return _context.Event.Where(x => x.EventId == eventId);
 
-            }
-            catch (ArgumentNullException)
-            {
-
-                throw;
-            }
+          
         }
 
 

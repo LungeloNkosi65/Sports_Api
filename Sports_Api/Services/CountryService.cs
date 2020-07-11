@@ -15,9 +15,19 @@ namespace Sports_Api.Services
             _countryseRepository = countryRepository;
         }
 
-        public IQueryable<Country> CountryForSport(int sportId)
+        public void Add(Country country)
+        {
+            _countryseRepository.Add(country);
+        }
+
+        public IQueryable<Country> CountryForSport(int ?sportId)
         {
             return _countryseRepository.CountryForSport(sportId);
+        }
+
+        public void Delete(int? countryId)
+        {
+            _countryseRepository.Delete(countryId);
         }
 
         public Country Find(int? countryId)
@@ -33,6 +43,11 @@ namespace Sports_Api.Services
         public IQueryable<Country> Get(int? countryId)
         {
             return _countryseRepository.Get(countryId);
+        }
+
+        public void Update(Country country)
+        {
+            _countryseRepository.Update(country);
         }
     }
 }

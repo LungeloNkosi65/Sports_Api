@@ -33,19 +33,31 @@ namespace Sports_Api.Repository
         public IQueryable<Country> CountryForSport(int? sportId)
         {
             string commandText = "[dbo].[GetCountriesForSport] @sportId=" + sportId;
-            try
-            {
-                return RunCountrySql(commandText);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return RunCountrySql(commandText);
+           
         }
         private IQueryable<Country> RunCountrySql(string sqlStatement)
         {
             return _context.Country.FromSqlRaw($"{sqlStatement}").AsQueryable();
+        }
+
+        public void Add(Country country)
+        {
+            _context.Country.Add(country);
+            _context.SaveChanges();
+        }
+
+        public void Delete(int? countryId)
+        {
+            var dbRecord = Find(countryId);
+            _context.Country.Remove(dbRecord);
+            _context.SaveChanges();
+        }
+
+        public void Update(Country country)
+        {
+            _context.Entry(country).State = EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

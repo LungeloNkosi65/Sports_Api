@@ -10,5 +10,8 @@ namespace Sports_Api.Repository
         IQueryable<SportsTree> Get();
         IQueryable<SportsTree> Get(int? id);
         SportsTree Find(int? id);
+        void Add(SportsTree sportsTree);
+        void udate(SportsTree sportsTree);
+        void delete(int? sportId);
     }
 }

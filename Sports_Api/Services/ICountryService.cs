@@ -10,6 +10,9 @@ namespace Sports_Api.Services
         IQueryable<Country> Get();
         IQueryable<Country> Get(int? countryId);
         Country Find(int? countryId);
-        IQueryable<Country> CountryForSport(int sportId);
+        IQueryable<Country> CountryForSport(int ?sportId);
+        void Add(Country country);
+        void Delete(int? countryId);
+        void Update(Country country);
     }
 }

@@ -20,15 +20,10 @@ namespace Sports_Api.Repository
 
         public IQueryable<CustomOdds> GetOddsForEvent(int ?tournamentId)
         {
-            try
-            {
+           
                 string commandText = $"[dbo].[GetOddsForEvent]  @tournamentId=${tournamentId}";
                 return ExecuteSql(commandText);
-            }
-            catch (ArgumentNullException)
-            {
-                throw;
-            }
+           
 
         }
 

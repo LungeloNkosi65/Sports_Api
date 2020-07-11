@@ -25,16 +25,8 @@ namespace Sports_Api.Repository
 
         public IQueryable<BetType> GetBetTypesForTournament(int? tournamentId)
         {
-            try
-            {
                 string commandText = $"[dbo].[GetBetTypesForTournament] @tournamentId={tournamentId}";
                 return ExecuteSql(commandText);
-            }
-            catch (ArgumentNullException)
-            {
-
-                throw;
-            }
 
         }
 
