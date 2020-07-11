@@ -151,7 +151,7 @@ namespace Sports_Api.Controllers
                     }
                     else
                     {
-                        return BadRequest("There was a problem trying to update the record");
+                        return NotFound("There was a problem trying to update the record");
                     }
                 }
                 else
@@ -161,7 +161,6 @@ namespace Sports_Api.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest($"There was an error trying to process the request {ex}");
             }
         }

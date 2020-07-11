@@ -13,6 +13,17 @@ namespace Sports_Api.Services
         {
             _betTypeRepository = betTypeRepository;
         }
+
+        public void Add(BetType betType)
+        {
+            _betTypeRepository.Add(betType);
+        }
+
+        public void Delete(int? betTypeId)
+        {
+            _betTypeRepository.Delete(betTypeId);
+        }
+
         public BetType Find(int? betTypeId)
         {
             return _betTypeRepository.FInd(betTypeId);
@@ -26,6 +37,11 @@ namespace Sports_Api.Services
         public IQueryable<BetType> GetBetTypesForTournament(int? tournamentId)
         {
             return _betTypeRepository.GetBetTypesForTournament(tournamentId);
+        }
+
+        public void Update(BetType betType)
+        {
+            _betTypeRepository.Update(betType);
         }
     }
 }

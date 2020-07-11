@@ -13,6 +13,20 @@ namespace Sports_Api.Repository
         {
             _context = context;
         }
+
+        public void Add(BetType betType)
+        {
+            _context.BetType.Add(betType);
+            _context.SaveChanges();
+        }
+
+        public void Delete(int? betTypeId)
+        {
+            var DbRecord = FInd(betTypeId);
+            _context.BetType.Remove(DbRecord);
+            _context.SaveChanges();
+        }
+
         public BetType FInd(int? betTypeId)
         {
             return _context.BetType.Find(betTypeId);
@@ -28,6 +42,12 @@ namespace Sports_Api.Repository
                 string commandText = $"[dbo].[GetBetTypesForTournament] @tournamentId={tournamentId}";
                 return ExecuteSql(commandText);
 
+        }
+
+        public void Update(BetType betType)
+        {
+            _context.Entry(betType).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         private IQueryable<BetType> ExecuteSql(string commandText)

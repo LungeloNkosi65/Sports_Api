@@ -10,5 +10,8 @@ namespace Sports_Api.Services
         IQueryable<BetType> Get();
         IQueryable<BetType> GetBetTypesForTournament(int? tournamentId);
         BetType Find(int? betTypeId);
+        void Add(BetType betType);
+        void Delete(int? betTypeId);
+        void Update(BetType betType);
     }
 }

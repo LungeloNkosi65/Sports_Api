@@ -20,9 +20,32 @@ namespace Sports_Api.Controllers
         }
         [HttpGet]
         [Route("EventsForTournament")]
-        public IQueryable<Event> GetEventsForTournament(int? tournamentId)
+        public IActionResult GetEventsForTournament(int? tournamentId)
         {
-            return _eventService.GetEventForTournament(tournamentId);
+            //return _eventService.GetEventForTournament(tournamentId);
+            try
+            {
+                if (tournamentId.HasValue)
+                {
+                    var results = _eventService.GetEventForTournament(tournamentId);
+                    if (results.Any())
+                    {
+                        return Ok(results);
+                    }
+                    else
+                    {
+                        return NotFound("There was a problem trying to process the request. Record was not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("There was a problem trying to process the request");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"There was an error trying to process the request {ex}");
+            }
         }
     }
 }

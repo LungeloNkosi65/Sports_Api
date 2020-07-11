@@ -19,9 +19,33 @@ namespace Sports_Api.Controllers
             _marketService = marketService;
         }
         [HttpGet]
-        public IQueryable<Market> Get(int? betTypeId)
+        public IActionResult Get(int? betTypeId)
         {
-            return _marketService.GetMarketsForBetType(betTypeId);
+            //return _marketService.GetMarketsForBetType(betTypeId);
+            try
+            {
+                if (betTypeId.HasValue)
+                {
+                    var results = _marketService.GetMarketsForBetType(betTypeId);
+                    if (results.Any())
+                    {
+                        return Ok(results);
+                    }
+                    else
+                    {
+                        return NotFound($"Records with id: {betTypeId} were not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest($"There was an error trying to process the request");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error trying to process the request {ex}");
+            }
         }
     }
 }
