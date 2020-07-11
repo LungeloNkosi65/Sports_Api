@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dapper;
+using Sports_Api.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +21,12 @@ namespace Sports_Api.Repository
 
         public IQueryable<SportsTree> Get()
         {
-            return _context.SportsTree;
+            using (var connection = DatabaseService.sqlConnection())
+            {
+                var results = connection.Query<SportsTree>("select  SportId,Name,Logo from SportsTree ");
+                return results.AsQueryable();
+            }
+            //return _context.SportsTree;
         }
 
         public IQueryable<SportsTree> Get(int? id)

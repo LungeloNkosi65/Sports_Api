@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Repository
 {
-   public interface IEventRepository
+    public interface IEventRepository
     {
         IQueryable<Event> Get();
         IQueryable<Event> GetSingleEvent(int? eventId);

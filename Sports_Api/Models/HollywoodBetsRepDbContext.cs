@@ -20,20 +20,15 @@ namespace Sports_Api
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<Market> Market { get; set; }
+        public virtual DbSet<Odds> Odds { get; set; }
         public virtual DbSet<SportCountry> SportCountry { get; set; }
         public virtual DbSet<SportsTournament> SportsTournament { get; set; }
         public virtual DbSet<SportsTree> SportsTree { get; set; }
         public virtual DbSet<Tournament> Tournament { get; set; }
         public virtual DbSet<TournamentBetType> TournamentBetType { get; set; }
+        public virtual DbSet<CustomOdds> CustomOdd { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-////#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=(LocalDb)\\LocalDBDemo;Database=HollywoodBetsRepDb;Trusted_Connection=True;");
-//            }
-        }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -104,6 +99,29 @@ namespace Sports_Api
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Odds>(entity =>
+            {
+                entity.HasKey(e => e.OddId);
+
+                entity.Property(e => e.OddId).ValueGeneratedNever();
+
+                entity.Property(e => e.Oddss)
+                    .HasColumnName("Odds")
+                    .HasColumnType("decimal(18, 0)");
+
+                entity.HasOne(d => d.BetTypeMarket)
+                    .WithMany(p => p.Odds)
+                    .HasForeignKey(d => d.BetTypeMarketId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Odds_BetTypeMarket");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.Odds)
+                    .HasForeignKey(d => d.EventId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Odds_Event");
             });
 
             modelBuilder.Entity<SportCountry>(entity =>
@@ -198,6 +216,6 @@ namespace Sports_Api
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

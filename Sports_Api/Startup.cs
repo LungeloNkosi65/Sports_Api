@@ -42,21 +42,28 @@ namespace Sports_Api
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
+
+            //services.AddControllers().AddNewtonsoftJson(options =>
+            //options.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            //);
             services.AddScoped<ISportRepository, SportRepository>();
             services.AddScoped<ISportService, SportService>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<ICountryService, CountryService>();
-            services.AddScoped<ITournamentRepository,TournamentRepository>();
+            services.AddScoped<ITournamentRepository, TournamentRepository>();
             services.AddScoped<ITournamentService, TournamentService>();
             services.AddScoped<IEventRepository, EventRepository>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IBetTypeRepository, BetTypeRepository>();
             services.AddScoped<IBetTypeService, BetTypeService>();
-
+            services.AddScoped<IMarketService, MarketService>();
+            services.AddScoped<IMarketRepository, MarketRepository>();
+            services.AddScoped<IOddsRepository, OddsRepository>();
+            services.AddScoped<IOddsService, OddsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -72,6 +79,8 @@ namespace Sports_Api
             {
                 endpoints.MapControllers();
             });
+            // Passing log configuration to log4net's config
+            object p = loggerFactory.AddLog4Net();
           
         }
     }

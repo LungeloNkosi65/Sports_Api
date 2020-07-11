@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Services
 {
-   public interface ISportService
+    public interface ISportService
     {
         IQueryable<SportsTree> Get();
         IQueryable<SportsTree> Get(int? id);

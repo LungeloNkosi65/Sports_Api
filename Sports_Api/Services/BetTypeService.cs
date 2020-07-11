@@ -25,7 +25,7 @@ namespace Sports_Api.Services
 
         public IQueryable<BetType> GetBetTypesForTournament(int? tournamentId)
         {
-           return _betTypeRepository.GetBetTypesForTournament(tournamentId); 
+            return _betTypeRepository.GetBetTypesForTournament(tournamentId);
         }
     }
 }

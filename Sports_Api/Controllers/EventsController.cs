@@ -14,7 +14,7 @@ namespace Sports_Api.Controllers
     public class EventsController : ControllerBase
     {
         private readonly IEventService _eventService;
-        public EventsController (IEventService eventService)
+        public EventsController(IEventService eventService)
         {
             _eventService = eventService;
         }

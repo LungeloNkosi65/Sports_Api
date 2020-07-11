@@ -35,10 +35,10 @@ namespace Sports_Api.Repository
 
                 throw;
             }
-            
+
         }
 
-        private IQueryable<BetType>ExecuteSql(string commandText)
+        private IQueryable<BetType> ExecuteSql(string commandText)
         {
             return _context.BetType.FromSqlRaw(commandText);
         }

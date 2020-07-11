@@ -15,7 +15,7 @@ namespace Sports_Api.Repository
         }
         public Event Find(int? eventId)
         {
-           return _context.Event.Find(eventId);
+            return _context.Event.Find(eventId);
         }
 
         public IQueryable<Event> Get()
@@ -25,18 +25,18 @@ namespace Sports_Api.Repository
 
         public IQueryable<Event> GetEventsForTournament(int? tournamentId)
         {
-            
-                try
-                {
-                    string commandText = $"[dbo].[GetEventsForTournament] @tournamentId={tournamentId}";
-                    return ExecuteSql(commandText);
-                }
-                catch (Exception)
-                {
 
-                    throw;
-                }
-         
+            try
+            {
+                string commandText = $"[dbo].[GetEventsForTournament] @tournamentId={tournamentId}";
+                return ExecuteSql(commandText);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public IQueryable<Event> GetSingleEvent(int? eventId)
@@ -54,7 +54,7 @@ namespace Sports_Api.Repository
         }
 
 
-        private IQueryable<Event>ExecuteSql(string commandText)
+        private IQueryable<Event> ExecuteSql(string commandText)
         {
             return _context.Event.FromSqlRaw($"{commandText}");
         }

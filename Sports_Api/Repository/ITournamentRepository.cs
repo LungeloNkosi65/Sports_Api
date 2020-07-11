@@ -5,13 +5,17 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Repository
 {
-   public interface ITournamentRepository
+    public interface ITournamentRepository
     {
         IQueryable<Tournament> Get();
         IQueryable<Tournament> GetSingleTournament(int? tournamentId);
 
-        IQueryable<Tournament> GetTournamentsForSport(int ?sportId, int? countryId);
+        IQueryable<Tournament> GetTournamentsForSport(int? sportId, int? countryId);
 
         Tournament Find(int? tournamentId);
+
+        Tournament Add(Tournament tournament);
+        void Update(Tournament tournament);
+        void delete(int? tournamentId);
     }
 }

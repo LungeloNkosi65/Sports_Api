@@ -1,4 +1,5 @@
-﻿using Sports_Api.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,19 @@ namespace Sports_Api.Services
         {
             _tournamentRepository = tournamentRepository;
         }
+
+        public Tournament Add(Tournament tournament)
+        {
+            return _tournamentRepository.Add(tournament);
+        }
+
+        public void Delete(int? id)
+        {
+            _tournamentRepository.delete(id);
+        }
+
+       
+
         public IQueryable<Tournament> Get()
         {
             return _tournamentRepository.Get();
@@ -24,9 +38,20 @@ namespace Sports_Api.Services
             return _tournamentRepository.GetSingleTournament(tournamentId);
         }
 
-        public IQueryable<Tournament> GetTournamentsForSport(int ?sportId, int ? countryId)
+        public IQueryable<Tournament> GetTournamentsForSport(int? sportId, int? countryId)
         {
             return _tournamentRepository.GetTournamentsForSport(sportId, countryId);
+        }
+
+        public void Update( Tournament tournament)
+        {
+            _tournamentRepository.Update(tournament);
+        }
+
+
+        Tournament ITournamentService.Find(int? tournamentId)
+        {
+            return _tournamentRepository.Find(tournamentId);
         }
     }
 }

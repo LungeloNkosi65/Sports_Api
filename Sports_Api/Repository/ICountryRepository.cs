@@ -8,9 +8,9 @@ namespace Sports_Api.Repository
     public interface ICountryRepository
     {
         IQueryable<Country> Get();
-        IQueryable<Country> Get(int ? countryId);
+        IQueryable<Country> Get(int? countryId);
         Country Find(int? countryId);
 
-        IQueryable<Country> CountryForSport(int ? sportId);
+        IQueryable<Country> CountryForSport(int? sportId);
     }
 }

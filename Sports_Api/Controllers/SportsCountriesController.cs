@@ -19,11 +19,11 @@ namespace Sports_Api.Controllers
             _countryService = countryService;
         }
         [HttpGet("{sportId}")]
-        public IEnumerable<Country> Get(int  sportId)
+        public IEnumerable<Country> Get(int sportId)
         {
-          
-                return _countryService.CountryForSport(sportId);
-          
+
+            return _countryService.CountryForSport(sportId);
+
         }
 
     }

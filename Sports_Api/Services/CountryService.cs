@@ -15,7 +15,7 @@ namespace Sports_Api.Services
             _countryseRepository = countryRepository;
         }
 
-        public IQueryable<Country> CountryForSport(int  sportId)
+        public IQueryable<Country> CountryForSport(int sportId)
         {
             return _countryseRepository.CountryForSport(sportId);
         }

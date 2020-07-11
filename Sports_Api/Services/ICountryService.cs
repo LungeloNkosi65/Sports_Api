@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Services
 {
-   public interface ICountryService
+    public interface ICountryService
     {
         IQueryable<Country> Get();
         IQueryable<Country> Get(int? countryId);
         Country Find(int? countryId);
-        IQueryable<Country> CountryForSport(int  sportId);
+        IQueryable<Country> CountryForSport(int sportId);
     }
 }
