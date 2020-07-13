@@ -31,7 +31,7 @@ namespace Sports_Api.Controllers
             {
                 if (tournamentId.HasValue)
                 {
-                    var result = _betTypeService.GetBetTypesForTournament(tournamentId);
+                    var result = _betTypeService.GetBetTypesForTournament(tournamentId).ToList();
                     if (result.Any())
                     {
                         return Ok(result);
@@ -56,7 +56,7 @@ namespace Sports_Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var results = _betTypeService.Get();
+            var results = _betTypeService.Get().ToList();
             return Ok(results);
         }
         [HttpPost]

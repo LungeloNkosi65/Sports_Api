@@ -66,7 +66,7 @@ namespace Sports_Api.Controllers
             {
                 if (sportId.HasValue)
                 {
-                    var results = _countryService.CountryForSport(sportId);
+                    var results = _countryService.CountryForSport(sportId).ToList();
                     if (results.Any())
                     {
                         return Ok(results);

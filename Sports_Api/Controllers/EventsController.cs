@@ -27,7 +27,7 @@ namespace Sports_Api.Controllers
             {
                 if (tournamentId.HasValue)
                 {
-                    var results = _eventService.GetEventForTournament(tournamentId);
+                    var results = _eventService.GetEventForTournament(tournamentId).ToList();
                     if (results.Any())
                     {
                         return Ok(results);

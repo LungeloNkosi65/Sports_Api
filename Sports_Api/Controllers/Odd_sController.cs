@@ -20,9 +20,32 @@ namespace Sports_Api.Controllers
         }
        // Odd_sGetOddsForEvent
          [HttpGet]
-        public IQueryable<CustomOdds>GetOddsForEvent(int ? tournamentId)
+        public IActionResult GetOddsForEvent(int ? tournamentId)
         {
-            return _oddsService.GetOddsForEvent(tournamentId);
+            try
+            {
+                if (tournamentId.HasValue)
+                {
+                    var result = _oddsService.GetOddsForEvent(tournamentId).ToList();
+                    if (result.Any())
+                    {
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        return NotFound("REcords not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("Invalid parameter passed");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error trying to process the requst {ex}");
+            }
         }
 
     }

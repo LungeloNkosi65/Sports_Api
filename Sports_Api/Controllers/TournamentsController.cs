@@ -38,7 +38,7 @@ namespace Sports_Api.Controllers
             {
                 if (sportId.HasValue && countryId.HasValue)
                 {
-                    var dbRecord = _tournamentService.GetTournamentsForSport(sportId, countryId);
+                    var dbRecord = _tournamentService.GetTournamentsForSport(sportId, countryId).ToList();
                     if (dbRecord.ToList().Any())
                     {
                         _logger.LogInformation("Get request for tournaments successfull");

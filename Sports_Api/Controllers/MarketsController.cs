@@ -26,7 +26,7 @@ namespace Sports_Api.Controllers
             {
                 if (betTypeId.HasValue)
                 {
-                    var results = _marketService.GetMarketsForBetType(betTypeId);
+                    var results = _marketService.GetMarketsForBetType(betTypeId).ToList();
                     if (results.Any())
                     {
                         return Ok(results);

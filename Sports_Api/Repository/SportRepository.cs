@@ -35,12 +35,12 @@ namespace Sports_Api.Repository
 
         public IQueryable<SportsTree> Get()
         {
-            using (var connection = DatabaseService.sqlConnection())
-            {
-                var results = connection.Query<SportsTree>("select  SportId,Name,Logo from SportsTree ");
-                return results.AsQueryable();
-            }
-            //return _context.SportsTree;
+            //using (var connection = DatabaseService.sqlConnection())
+            //{
+            //    var results = connection.Query<SportsTree>("select  SportId,Name,Logo from SportsTree ");
+            //    return results.AsQueryable();
+            //}
+            return _context.SportsTree;
         }
 
         public IQueryable<SportsTree> Get(int? id)
