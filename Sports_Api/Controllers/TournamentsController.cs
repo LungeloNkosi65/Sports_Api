@@ -18,7 +18,7 @@ namespace Sports_Api.Controllers
     public class TournamentsController : ControllerBase
     {
         private readonly ITournamentService _tournamentService;
-        private ILogger<TournamentsController> _logger;
+        private readonly ILogger<TournamentsController> _logger;
         public TournamentsController(ITournamentService tournamentService, ILogger<TournamentsController> logger)
         {
             _tournamentService = tournamentService;

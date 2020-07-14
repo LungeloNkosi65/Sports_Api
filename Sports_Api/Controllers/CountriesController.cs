@@ -28,7 +28,8 @@ namespace Sports_Api.Controllers
             var results=_countryService.Get();
             return Ok(results);
         }
-        [HttpGet("{countryId}")]
+        [HttpGet]
+        [Route("GetSingleCountry")]
         public IActionResult Get(int? countryId)
         {
             //return _countryService.Get(countryId);
@@ -36,7 +37,7 @@ namespace Sports_Api.Controllers
             {
                 if (countryId.HasValue)
                 {
-                    var results=_countryService.Get(countryId);
+                    var results=_countryService.Get(countryId).ToList();
                     if (results.Any())
                     {
                         return Ok(results);
@@ -57,7 +58,7 @@ namespace Sports_Api.Controllers
                 return BadRequest($"There was an error trying to process the request {ex}");
             }
         }
-
+        [HttpGet]
         [Route("GetSportCountry")]
         public IActionResult GetSportCountry(int? sportId)
         {

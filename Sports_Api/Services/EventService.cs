@@ -14,6 +14,17 @@ namespace Sports_Api.Services
         {
             _eventRepository = eventRepository;
         }
+
+        public void Add(Event entity)
+        {
+            _eventRepository.Add(entity);
+        }
+
+        public void Delete(int? eventId)
+        {
+            _eventRepository.Delete(eventId);
+        }
+
         public Event Find(int? eventId)
         {
             return _eventRepository.Find(eventId);
@@ -32,6 +43,11 @@ namespace Sports_Api.Services
         public IQueryable<Event> GetSingleEvent(int? eventId)
         {
             return _eventRepository.GetSingleEvent(eventId);
+        }
+
+        public void Update(Event entitity)
+        {
+            _eventRepository.Update(entitity);
         }
     }
 }

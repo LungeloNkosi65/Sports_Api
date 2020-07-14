@@ -60,6 +60,12 @@ namespace Sports_Api
             services.AddScoped<IMarketRepository, MarketRepository>();
             services.AddScoped<IOddsRepository, OddsRepository>();
             services.AddScoped<IOddsService, OddsService>();
+            services.AddScoped<ISportCountryRepository, SportCountryRepository>();
+            services.AddScoped<ISportCountryService, SportCountryService>();
+            services.AddScoped<IBetRepository, BetRepository>();
+            services.AddScoped<IBetService, BetService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

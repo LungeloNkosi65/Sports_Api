@@ -13,6 +13,20 @@ namespace Sports_Api.Repository
         {
             _context = hollywoodBetsRepDbContext;
         }
+
+        public void Add(Event entity)
+        {
+            _context.Event.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void Delete(int? eventId)
+        {
+            var dbRecord = Find(eventId);
+            _context.Event.Remove(dbRecord);
+            _context.SaveChanges();
+        }
+
         public Event Find(int? eventId)
         {
             return _context.Event.Find(eventId);
@@ -25,22 +39,19 @@ namespace Sports_Api.Repository
 
         public IQueryable<Event> GetEventsForTournament(int? tournamentId)
         {
-
-            
                 string commandText = $"[dbo].[GetEventsForTournament] @tournamentId={tournamentId}";
                 return ExecuteSql(commandText);
-         
-
         }
 
         public IQueryable<Event> GetSingleEvent(int? eventId)
         {
-           
                 return _context.Event.Where(x => x.EventId == eventId);
-
-          
         }
 
+        public void Update(Event entitity)
+        {
+            _context.Entry(entitity).State = EntityState.Modified;
+        }
 
         private IQueryable<Event> ExecuteSql(string commandText)
         {

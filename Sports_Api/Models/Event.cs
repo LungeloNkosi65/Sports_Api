@@ -7,6 +7,7 @@ namespace Sports_Api
     {
         public Event()
         {
+            BetTbl = new HashSet<BetTbl>();
             Odds = new HashSet<Odds>();
         }
 
@@ -16,6 +17,7 @@ namespace Sports_Api
         public DateTime EeventDate { get; set; }
 
         public virtual Tournament Tournament { get; set; }
+        public virtual ICollection<BetTbl> BetTbl { get; set; }
         public virtual ICollection<Odds> Odds { get; set; }
     }
 }

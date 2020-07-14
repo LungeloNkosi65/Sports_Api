@@ -15,8 +15,11 @@ namespace Sports_Api
         {
         }
 
+        public virtual DbSet<BetSlip> BetSlip { get; set; }
+        public virtual DbSet<BetTbl> BetTbl { get; set; }
         public virtual DbSet<BetType> BetType { get; set; }
         public virtual DbSet<BetTypeMarket> BetTypeMarket { get; set; }
+        public virtual DbSet<BonusTbl> BonusTbl { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<Event> Event { get; set; }
         public virtual DbSet<Market> Market { get; set; }
@@ -28,10 +31,85 @@ namespace Sports_Api
         public virtual DbSet<TournamentBetType> TournamentBetType { get; set; }
         public virtual DbSet<CustomOdds> CustomOdd { get; set; }
 
-        
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<BetSlip>(entity =>
+            {
+                entity.Property(e => e.BetSlipId).ValueGeneratedNever();
+
+                entity.Property(e => e.Odds).HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.Payout).HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.StakeAmount).HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.UserAccount)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<BetTbl>(entity =>
+            {
+                entity.HasKey(e => e.BetId);
+
+                entity.ToTable("Bet_tbl");
+
+                entity.Property(e => e.BetId).ValueGeneratedNever();
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.Odds).HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.Payout).HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.Stake).HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.Status)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TicketNumber)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.BetSlip)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.BetSlipId)
+                    .HasConstraintName("FK_Bet_tbl_BetSlip");
+
+                entity.HasOne(d => d.BetType)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.BetTypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bet_tbl_BetType");
+
+                entity.HasOne(d => d.Event)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.EventId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bet_tbl_Event");
+
+                entity.HasOne(d => d.Markert)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.MarkertId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bet_tbl_Market");
+
+                entity.HasOne(d => d.Sport)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.SportId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bet_tbl_SportsTree");
+
+                entity.HasOne(d => d.Tournament)
+                    .WithMany(p => p.BetTbl)
+                    .HasForeignKey(d => d.TournamentId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bet_tbl_Tournament");
+            });
+
             modelBuilder.Entity<BetType>(entity =>
             {
                 entity.Property(e => e.BetTypeId).ValueGeneratedNever();
@@ -57,6 +135,17 @@ namespace Sports_Api
                     .HasForeignKey(d => d.MarketId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_BetTypeMarket_Market");
+            });
+
+            modelBuilder.Entity<BonusTbl>(entity =>
+            {
+                entity.HasKey(e => e.BonusId);
+
+                entity.ToTable("Bonus_tbl");
+
+                entity.Property(e => e.BonusId).ValueGeneratedNever();
+
+                entity.Property(e => e.BonusPercent).HasColumnType("decimal(18, 2)");
             });
 
             modelBuilder.Entity<Country>(entity =>
@@ -107,9 +196,9 @@ namespace Sports_Api
 
                 entity.Property(e => e.OddId).ValueGeneratedNever();
 
-                entity.Property(e => e.Oddss)
+                entity.Property(e => e.Odds1)
                     .HasColumnName("Odds")
-                    .HasColumnType("decimal(18, 0)");
+                    .HasColumnType("decimal(18, 2)");
 
                 entity.HasOne(d => d.BetTypeMarket)
                     .WithMany(p => p.Odds)
@@ -216,6 +305,6 @@ namespace Sports_Api
             OnModelCreatingPartial(modelBuilder);
         }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

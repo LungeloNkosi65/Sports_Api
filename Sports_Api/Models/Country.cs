@@ -12,10 +12,10 @@ namespace Sports_Api
         }
 
         public int CountryId { get; set; }
-        public string CountryName { get; set; }
-        public string Flag { get; set; }
+            public string CountryName { get; set; }
+            public string Flag { get; set; }
 
-        public virtual ICollection<SportCountry> SportCountry { get; set; }
-        public virtual ICollection<SportsTournament> SportsTournament { get; set; }
+            public virtual ICollection<SportCountry> SportCountry { get; set; }
+            public virtual ICollection<SportsTournament> SportsTournament { get; set; }
+        }
     }
-}

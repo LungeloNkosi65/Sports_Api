@@ -11,5 +11,8 @@ namespace Sports_Api.Services
         IQueryable<Event> GetSingleEvent(int? eventId);
         IQueryable<Event> GetEventForTournament(int? tournamentId);
         Event Find(int? eventId);
+        void Add(Event entity);
+        void Update(Event entitity);
+        void Delete(int? eventId);
     }
 }
