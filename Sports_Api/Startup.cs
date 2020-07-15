@@ -64,6 +64,14 @@ namespace Sports_Api
             services.AddScoped<ISportCountryService, SportCountryService>();
             services.AddScoped<IBetRepository, BetRepository>();
             services.AddScoped<IBetService, BetService>();
+            services.AddScoped<ISportTournamentRepository, SportTournamentRepository>();
+            services.AddScoped<ISportTournamentService, SportTournamentService>();
+            services.AddScoped<ITournamentBetTypeRepository, TournamentBetTypeRepository>();
+            services.AddScoped<ITournamentBetTypeService, TournamentBetTypeService>();
+            services.AddScoped<IOddsDefaultRepository, OddsDefaultRepository>();
+            services.AddScoped<IOddsDefaultService, OddsDefaultService>();
+            services.AddScoped<IBetTypeMarketRepository, BetTypeMarketRepository>();
+            services.AddScoped<IBetTypeMarketService, BetTypeMarketService>();
 
 
         }

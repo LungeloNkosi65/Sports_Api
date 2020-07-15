@@ -12,5 +12,6 @@ namespace Sports_Api.Repository
         void Update(SportsTournament sportsTournament);
         void Delete(int? sportTourtnamentId);
         IQueryable<SportsTournament> getSingleSportTournament(int? sportTourtnamentId);
+        IQueryable<SportsTournament> GetAll();
     }
 }

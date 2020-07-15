@@ -9,5 +9,8 @@ namespace Sports_Api.Repository
     {
         IQueryable<CustomOdds> Get();
         IQueryable<CustomOdds> GetOddsForEvent(int ?tournamentId);
+
+      
+
     }
 }

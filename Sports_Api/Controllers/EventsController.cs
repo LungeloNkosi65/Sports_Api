@@ -22,6 +22,55 @@ namespace Sports_Api.Controllers
             _logger = logger;
         }
         [HttpGet]
+        public IActionResult Get(int?eventId)
+        {
+            try
+            {
+                if (eventId.HasValue)
+                {
+                    var results = _eventService.GetSingleEvent(eventId).ToList();
+                    if (results.Any())
+                    {
+                        _eventService.GetSingleEvent(eventId);
+                        return Ok(results);
+                    }
+                    else { return NotFound("Record was not found"); }
+                }
+                else
+                {
+                    return BadRequest($"There was an error processing your requst");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error trying to process your request {ex}");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAll")]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                var results = _eventService.Get().ToList();
+                if (results.Any())
+                {
+                    return Ok(results);
+                }
+                else
+                {
+
+                    return NotFound("There were no records found");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error processing your request {ex}");
+            }        }
+        [HttpGet]
         [Route("EventsForTournament")]
         public IActionResult GetEventsForTournament(int? tournamentId)
         {
@@ -74,7 +123,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(int? eventId, Event model)
+        public IActionResult Update(int? eventId, [FromBody] Event model)
         {
             try
             {

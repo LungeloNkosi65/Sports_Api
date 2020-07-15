@@ -21,6 +21,28 @@ namespace Sports_Api.Controllers
             _sportTournamentService = sportTournamentService;
             _logger = logger;
         }
+        [HttpGet]
+        [Route("GetAll")]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                var results = _sportTournamentService.GetAll().ToList();
+                if (results.Any())
+                {
+                    return Ok(results);
+                }
+                else
+                {
+                    return NotFound("Record not found");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an erro procesing your request {ex}");
+            }
+        }
 
         [HttpGet]
         public IActionResult Get(int? sportTournamentId)

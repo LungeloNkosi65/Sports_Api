@@ -29,6 +29,11 @@ namespace Sports_Api.Services
             return _sportTournamentRepository.Find(sportTourtnamentId);
         }
 
+        public IQueryable<SportsTournament> GetAll()
+        {
+            return _sportTournamentRepository.GetAll();
+        }
+
         public IQueryable<SportsTournament> getSingleSportTournament(int? sportTourtnamentId)
         {
             return _sportTournamentRepository.getSingleSportTournament(sportTourtnamentId);
