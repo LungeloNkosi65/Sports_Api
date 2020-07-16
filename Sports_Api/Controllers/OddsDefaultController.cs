@@ -28,7 +28,7 @@ namespace Sports_Api.Controllers
         {
             try
             {
-                var results = _oddsDefaultService.GetOdds().ToList();
+                var results = _oddsDefaultService.GetAll().ToList();
                 if (results.Any())
                 {
                     return Ok(results);

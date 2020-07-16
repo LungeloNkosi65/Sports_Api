@@ -43,9 +43,15 @@ namespace Sports_Api.Repository
             return ExecuteSql(commandText);
         }
 
+        public IQueryable<Market> GetSingle(int? marletId)
+        {
+          return  _context.Market.Where(x => x.MarketId == marletId).AsQueryable();
+        }
+
         public void Update(Market market)
         {
-            throw new NotImplementedException();
+            _context.Entry(market).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         private IQueryable<Market> ExecuteSql(string commandText)

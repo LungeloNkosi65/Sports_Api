@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,12 @@ namespace Sports_Api.Repository
            return _context.SportsTournament.AsQueryable();
         }
 
+        public IQueryable<SportsTournamentVm> GetAllVm()
+        {
+            string commandText = $"[dbo].[SportTourname_Ids]";
+            return ExecuteSql(commandText);
+        }
+
         public IQueryable<SportsTournament> getSingleSportTournament(int? sportTourtnamentId)
         {
             return _context.SportsTournament.Where(x => x.SportTourtnamentId == sportTourtnamentId).AsQueryable();
@@ -45,6 +52,10 @@ namespace Sports_Api.Repository
         {
             _context.Entry(sportsTournament).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+        private IQueryable<SportsTournamentVm> ExecuteSql(string commandText)
+        {
+            return _context.SportsTournamentVms.FromSqlRaw(commandText).AsQueryable();
         }
     }
 }

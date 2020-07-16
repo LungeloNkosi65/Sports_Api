@@ -27,6 +27,7 @@ namespace Sports_Api.Repository
         {
             var dbRecord = Find(tournamentId);  // this will return an object with one record from the db
            _context.Tournament.Remove(dbRecord);
+            _context.SaveChanges();
           
         }
 

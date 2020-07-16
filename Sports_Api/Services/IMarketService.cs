@@ -9,5 +9,13 @@ namespace Sports_Api.Services
     {
         IQueryable<Market> Get();
         IQueryable<Market> GetMarketsForBetType(int? betTypeId);
+
+        IQueryable<Market> GetSingle(int? marketId);
+
+        Market Find(int? marketId);
+
+        void Add(Market market);
+        void update(Market market);
+        void delete(int? marketId);
     }
 }

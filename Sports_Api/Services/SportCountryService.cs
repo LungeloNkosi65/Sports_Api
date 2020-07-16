@@ -1,4 +1,5 @@
-﻿using Sports_Api.Repository;
+﻿using Sports_Api.Models.CustomModel;
+using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace Sports_Api.Services
         public void Update(SportCountry sportCountry)
         {
             _sportCountry.Update(sportCountry);
+        }
+
+        public IQueryable<SportCountryViewModel> ViewGet()
+        {
+            return _sportCountry.ViewGet();
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Sports_Api.Repository
         {
             var dbRecord = Find(sportId);
             _context.SportsTree.Remove(dbRecord);
+            _context.SaveChanges();
         }
 
         public SportsTree Find(int? id)

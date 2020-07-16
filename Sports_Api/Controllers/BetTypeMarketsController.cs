@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,7 +28,7 @@ namespace Sports_Api.Controllers
         {
             try
             {
-                var results = _betTypeMarketService.GetAll().ToList();
+                var results = _betTypeMarketService.GetAllVm().ToList();
                 if (results.Any())
                 {
                     return Ok(results);

@@ -27,7 +27,7 @@ namespace Sports_Api.Controllers
         {
             try
             {
-                var results = _sportTournamentService.GetAll().ToList();
+                var results = _sportTournamentService.GetAllVm().ToList();
                 if (results.Any())
                 {
                     return Ok(results);

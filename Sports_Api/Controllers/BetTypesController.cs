@@ -54,6 +54,36 @@ namespace Sports_Api.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetSingle(int? betTypeId)
+        {
+            try
+            {
+                if (betTypeId.HasValue)
+                {
+                    var results = _betTypeService.GetSingle(betTypeId).ToList();
+                    if (results.Any())
+                    {
+                        return Ok(results);
+                    }
+                    else
+                    {
+                        return NotFound("Record not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("There was an error while processing your request");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error while processing your request {ex}");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetAll")]
         public IActionResult Get()
         {
             var results = _betTypeService.Get().ToList();
@@ -114,7 +144,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(int? betTypeId,BetType betType)
+        public IActionResult Update(int? betTypeId, [FromBody] BetType betType)
         {
             try
             {

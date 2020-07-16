@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Sports_Api.Models.CustomModel;
 
 namespace Sports_Api
 {
@@ -30,6 +31,15 @@ namespace Sports_Api
         public virtual DbSet<Tournament> Tournament { get; set; }
         public virtual DbSet<TournamentBetType> TournamentBetType { get; set; }
         public virtual DbSet<CustomOdds> CustomOdd { get; set; }
+        public virtual DbSet<SportCountryViewModel> SportCountryViewModels { get; set; }
+        public virtual DbSet<OddsViewModel> OddsViewModels { get; set; }
+        public virtual DbSet<BetTypeMarketVm> BetTypeMarketVms { get; set; }
+        public virtual DbSet<TournamentBetTypeVm> TournamentBetTypeVms { get; set; }
+        public virtual DbSet<SportsTournamentVm> SportsTournamentVms { get; set; }
+
+        
+
+
 
 
 

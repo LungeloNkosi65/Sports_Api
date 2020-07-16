@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,10 +43,21 @@ namespace Sports_Api.Repository
             return _context.BetTypeMarket.AsQueryable();
         }
 
+        public IQueryable<BetTypeMarketVm> GetAllVm()
+        {
+            string commandText = $"[dbo].[BetType_Market]";
+            return ExecteSql(commandText);
+        }
+
         public void Update(BetTypeMarket betTypeMarket)
         {
             _context.Entry(betTypeMarket).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+
+        private IQueryable<BetTypeMarketVm> ExecteSql(string commandText)
+        {
+          return  _context.BetTypeMarketVms.FromSqlRaw(commandText).AsQueryable();
         }
     }
 }

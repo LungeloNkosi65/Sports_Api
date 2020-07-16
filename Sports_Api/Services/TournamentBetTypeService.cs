@@ -1,4 +1,5 @@
-﻿using Sports_Api.Repository;
+﻿using Sports_Api.Models.CustomModel;
+using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,11 @@ namespace Sports_Api.Services
         public IQueryable<TournamentBetType> GetAll()
         {
           return  _tournamentBetType.GetAll();
+        }
+
+        public IQueryable<TournamentBetTypeVm> GetAllVm()
+        {
+            return _tournamentBetType.GetAllVm();
         }
 
         public void Update(TournamentBetType tournamentBetType)

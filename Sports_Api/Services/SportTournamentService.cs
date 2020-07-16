@@ -1,4 +1,5 @@
-﻿using Sports_Api.Repository;
+﻿using Sports_Api.Models.CustomModel;
+using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace Sports_Api.Services
         public IQueryable<SportsTournament> GetAll()
         {
             return _sportTournamentRepository.GetAll();
+        }
+
+        public IQueryable<SportsTournamentVm> GetAllVm()
+        {
+            return _sportTournamentRepository.GetAllVm();
         }
 
         public IQueryable<SportsTournament> getSingleSportTournament(int? sportTourtnamentId)

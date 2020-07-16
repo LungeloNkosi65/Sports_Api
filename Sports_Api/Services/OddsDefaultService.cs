@@ -1,4 +1,5 @@
-﻿using Sports_Api.Repository;
+﻿using Sports_Api.Models.CustomModel;
+using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace Sports_Api.Services
         public Odds Find(int? oddId)
         {
             return _defaultRepository.Find(oddId);
+        }
+
+        public IQueryable<OddsViewModel> GetAll()
+        {
+            return _defaultRepository.GetAll();
         }
 
         public IQueryable<Odds> GetOdds()

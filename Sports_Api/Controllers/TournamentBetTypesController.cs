@@ -27,7 +27,7 @@ namespace Sports_Api.Controllers
         {
             try
             {
-                var results = _tournamentBetType.GetAll().ToList();
+                var results = _tournamentBetType.GetAllVm().ToList();
                 if (results.Any())
                 {
                     return Ok(results);

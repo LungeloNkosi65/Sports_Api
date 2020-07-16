@@ -24,6 +24,30 @@ namespace Sports_Api.Controllers
             _logger = logger;
             _sportCountryService = sportCountry;
         }
+
+
+        [HttpGet]
+        [Route("GetZonke")]
+        public IActionResult GetAllV()
+        {
+            try
+            {
+                var results = _sportCountryService.ViewGet().ToList();
+                if (results.Any())
+                {
+                    return Ok(results);
+                }
+                else
+                {
+                    return NotFound("No Records found");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"There was an error while processing your request {ex}");
+            }
+        }
+
         [HttpGet("{sportId}")]
         public IActionResult Get(int sportId)
         {

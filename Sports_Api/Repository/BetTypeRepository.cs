@@ -44,6 +44,11 @@ namespace Sports_Api.Repository
 
         }
 
+        public IQueryable<BetType> GetSingle(int? betTypeId)
+        {
+            return _context.BetType.Where(x => x.BetTypeId == betTypeId).AsQueryable();
+        }
+
         public void Update(BetType betType)
         {
             _context.Entry(betType).State = EntityState.Modified;

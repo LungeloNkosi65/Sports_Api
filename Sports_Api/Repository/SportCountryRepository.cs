@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,17 @@ namespace Sports_Api.Repository
         {
             _context.Entry(sportCountry).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+
+        public IQueryable<SportCountryViewModel> ViewGet()
+        {
+            var command = $"[dbo].[SportCountry_Ids]";
+            return executeSql(command).AsQueryable();
+        }
+
+        private IQueryable<SportCountryViewModel> executeSql(string commandText)
+        {
+            return _context.SportCountryViewModels.FromSqlRaw(commandText);
         }
     }
 }

@@ -39,6 +39,11 @@ namespace Sports_Api.Services
             return _betTypeRepository.GetBetTypesForTournament(tournamentId);
         }
 
+        public IQueryable<BetType> GetSingle(int? betTypeId)
+        {
+            return _betTypeRepository.GetSingle(betTypeId);
+        }
+
         public void Update(BetType betType)
         {
             _betTypeRepository.Update(betType);

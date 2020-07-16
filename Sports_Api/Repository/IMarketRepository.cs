@@ -15,6 +15,7 @@ namespace Sports_Api.Repository
 
         void Update(Market market);
         Market Find(int? markeyId);
+        IQueryable<Market> GetSingle(int? marletId);
 
     }
 }//using System;

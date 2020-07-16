@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace Sports_Api.Repository
             return _context.Odds.Find(oddId);
         }
 
+        public IQueryable<OddsViewModel> GetAll()
+        {
+            string commandText = $"[dbo].[Odds_View] ";
+            return ExecuteSql(commandText);
+        }
+
         public IQueryable<Odds> GetOdds()
         {
             return _context.Odds.AsQueryable();
@@ -46,6 +53,10 @@ namespace Sports_Api.Repository
         {
             _context.Entry(odds).State = EntityState.Modified;
             _context.SaveChanges();
+        }
+        private IQueryable<OddsViewModel>ExecuteSql(string commantText)
+        {
+          return  _context.OddsViewModels.FromSqlRaw(commantText).AsQueryable();
         }
     }
 }

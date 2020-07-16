@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,10 +43,20 @@ namespace Sports_Api.Repository
             return _context.TournamentBetType.AsQueryable();
         }
 
+        public IQueryable<TournamentBetTypeVm> GetAllVm()
+        {
+            string commandText = "[dbo].[TournamentBetType_Ids]";
+            return ExecuteSql(commandText);
+        }
+
         public void Update(TournamentBetType tournamentBetType)
         {
             _context.Entry(tournamentBetType);
             _context.SaveChanges();
+        }
+        private IQueryable<TournamentBetTypeVm>ExecuteSql(string commandText)
+        {
+            return _context.TournamentBetTypeVms.FromSqlRaw(commandText).AsQueryable();
         }
     }
 }

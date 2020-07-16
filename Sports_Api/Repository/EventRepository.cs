@@ -51,6 +51,7 @@ namespace Sports_Api.Repository
         public void Update(Event entitity)
         {
             _context.Entry(entitity).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         private IQueryable<Event> ExecuteSql(string commandText)

@@ -8,6 +8,7 @@ namespace Sports_Api.Repository
     public interface IBetTypeRepository
     {
         IQueryable<BetType> Get();
+        IQueryable<BetType> GetSingle(int? betTypeId);
         IQueryable<BetType> GetBetTypesForTournament(int? tournamentId);
         BetType FInd(int? betTypeId);
         void Add(BetType betType);

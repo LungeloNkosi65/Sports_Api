@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sports_Api.Models.CustomModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,5 +14,6 @@ namespace Sports_Api.Services
         void Update(BetTypeMarket betTypeMarket);
         void Delete(int? betTypeMarketId);
         BetTypeMarket Find(int? betTypeMarketId);
+        IQueryable<BetTypeMarketVm> GetAllVm();
     }
 }
