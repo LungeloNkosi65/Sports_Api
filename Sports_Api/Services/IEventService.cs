@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sports_Api.Models.CustomModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Sports_Api.Services
     public interface IEventService
     {
         IQueryable<Event> Get();
+        IQueryable<EventVm> GetAllVm();
         IQueryable<Event> GetSingleEvent(int? eventId);
         IQueryable<Event> GetEventForTournament(int? tournamentId);
         Event Find(int? eventId);

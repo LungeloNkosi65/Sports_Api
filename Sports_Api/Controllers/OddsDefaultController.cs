@@ -120,6 +120,7 @@ namespace Sports_Api.Controllers
             }
         }
 
+        [HttpDelete]
         public IActionResult Delete(int? oddId)
         {
             try

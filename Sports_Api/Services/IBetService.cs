@@ -13,5 +13,8 @@ namespace Sports_Api.Services
         IQueryable<BetTbl> RecentBets(string accountNumber);
 
         BetTbl Find(int? betId);
+        IQueryable<BetSlip> GetBets();
+        IQueryable<BetTbl> GetBetEvents();
+
     }
 }

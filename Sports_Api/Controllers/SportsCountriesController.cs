@@ -48,7 +48,7 @@ namespace Sports_Api.Controllers
             }
         }
 
-        [HttpGet("{sportId}")]
+        [HttpGet]
         public IActionResult Get(int sportId)
         {
             try
@@ -76,6 +76,35 @@ namespace Sports_Api.Controllers
                 return BadRequest($"There was an error trying to process your request {ex}");
             }
 
+        }
+        [HttpGet]
+        [Route("GetSingle")]
+
+        public IActionResult GetSingleSportCountry(int? sportCountryId)
+        {
+            try
+            {
+                if (sportCountryId.HasValue)
+                {
+                    var results = _sportCountryService.GetSingle(sportCountryId).ToList();
+                    if (results.Any())
+                    {
+                        return Ok(results);
+                    }
+                    else
+                    {
+                        return NotFound("Record was not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("There was an error while processing your request");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"There was an error while processing your request {ex}");
+            }
         }
 
         [HttpPost]
@@ -146,6 +175,29 @@ namespace Sports_Api.Controllers
             {
                 return BadRequest($"There was an error trying to process you request {ex}");
 
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Update(int? sportCountryId, SportCountry sportCountry)
+        {
+            try
+            {
+                if (sportCountryId.HasValue && sportCountryId==sportCountry.SportCountryId)
+                {
+                    _logger.LogInformation("Put Request: Successfull");
+                    _sportCountryService.Update(sportCountry);
+                    return Ok("Record successfully updated");
+                }
+                else
+                {
+                    return BadRequest("There was an error processing your request");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Put Request: Request failed", ex);
+                return BadRequest($"There was an error processing {ex}");
             }
         }
 

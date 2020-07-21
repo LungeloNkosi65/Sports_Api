@@ -9,7 +9,7 @@ namespace Sports_Api.Services
    public interface IBetTypeMarketService
     {
         IQueryable<BetTypeMarket> GetAll();
-        IQueryable<BetTypeMarket> Get(int? betTypeMarketId);
+        IQueryable<BetTypeMarketVm> Get(int? betTypeMarketId);
         void Add(BetTypeMarket betTypeMarket);
         void Update(BetTypeMarket betTypeMarket);
         void Delete(int? betTypeMarketId);

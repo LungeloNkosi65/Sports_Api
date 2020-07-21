@@ -22,6 +22,53 @@ namespace Sports_Api.Controllers
             _betService = betService;
             _logger = logger;
         }
+        [HttpGet]
+        [Route("GetBetEvents")]
+        public IActionResult GetBetEvents()
+        {
+            try
+            {
+                var results = _betService.GetBetEvents().ToList();
+                if (results.Any())
+                {
+                    return Ok(results);
+                }
+                else
+                {
+
+                    return NotFound("There were no records found");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error processing your request {ex}");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetBets")]
+        public IActionResult GetBets()
+        {
+            try
+            {
+                var results = _betService.GetBets().ToList();
+                if (results.Any())
+                {
+                    return Ok(results);
+                }
+                else
+                {
+
+                    return NotFound("There were no records found");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"There was an error processing your request {ex}");
+            }
+        }
 
         [HttpGet]
         [Route("RecentBets")]
@@ -77,7 +124,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PlaceBet( SubmitedBet submitedBet)
+        public IActionResult PlaceBet([FromBody] SubmitedBet submitedBet)
         {
             try
             {

@@ -11,7 +11,7 @@ namespace Sports_Api.Repository
         IQueryable<BetTypeMarket> GetAll();
         IQueryable<BetTypeMarketVm> GetAllVm();
 
-        IQueryable<BetTypeMarket> Get(int? betTypeMarketId);
+        IQueryable<BetTypeMarketVm> Get(int? betTypeMarketId);
         void Add(BetTypeMarket betTypeMarket);
         void Update(BetTypeMarket betTypeMarket);
         void Delete(int? betTypeMarketId);

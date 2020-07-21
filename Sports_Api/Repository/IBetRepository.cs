@@ -11,6 +11,8 @@ namespace Sports_Api.Repository
         void PlaceBet(SubmitedBet submitedBet);
         void CancellBet(int? betId);
         IQueryable<BetTbl> RecentBets(string accountNumber);
+        IQueryable<BetSlip> GetBets();
+        IQueryable<BetTbl> GetBetEvents();
 
         BetTbl Find(int? betId);
     }

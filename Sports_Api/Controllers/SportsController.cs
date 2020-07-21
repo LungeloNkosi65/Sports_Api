@@ -30,14 +30,15 @@ namespace Sports_Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int? id)
+        [HttpGet]
+        [Route("GetSingle")]
+        public IActionResult Get(int? sportId)
         {
             try
             {
-                if (id.HasValue)
+                if (sportId.HasValue)
                 {
-                    var result = _sportService.Get(id);
+                    var result = _sportService.Get(sportId);
                     if (result.Any())
                     {
                         _logger.LogInformation("Sports Successfully retreived");

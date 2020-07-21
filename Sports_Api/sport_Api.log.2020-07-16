@@ -1,0 +1,38 @@
+2020-07-16 18:28:01,215  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-16 18:28:01,236  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\source\repos\Sports_Api\Sports_Api
+ 2020-07-16 18:28:04,768  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 18:28:04,774  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 19:52:57,709  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-16 19:52:57,842  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-16 19:52:57,846  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\source\repos\Sports_Api\Sports_Api
+ 2020-07-16 19:53:00,003  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 19:53:00,012  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 21:03:06,947  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:03:07,952  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:03:08,003  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:03:08,014  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:03:08,022  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:03:08,031  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:39:51,302  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:45:27,088  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully added to database on SportsTree Table
+ 2020-07-16 21:46:54,740  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:47:07,540  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:47:22,524  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 21:55:21,502  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-16 21:55:21,775  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-16 21:55:21,793  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\source\repos\Sports_Api\Sports_Api
+ 2020-07-16 21:55:28,816  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 21:55:28,836  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 21:57:34,395  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-07-16 22:17:10,898  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 23 deleted
+ 2020-07-16 22:31:43,446  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 22 deleted
+ 2020-07-16 22:49:05,652  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament added to database
+ 2020-07-16 22:49:14,465  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 24 deleted
+ 2020-07-16 22:49:29,995  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 24 deleted
+ 2020-07-16 22:53:20,660  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-07-16 22:53:20,796  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-07-16 22:53:20,805  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo Nkosi\source\repos\Sports_Api\Sports_Api
+ 2020-07-16 22:53:24,027  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 22:53:24,038  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-07-16 22:54:48,218  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 22 deleted
+ 

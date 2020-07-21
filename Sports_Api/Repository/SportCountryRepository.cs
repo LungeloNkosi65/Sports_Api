@@ -33,6 +33,11 @@ namespace Sports_Api.Repository
             return _context.SportCountry.AsQueryable();
         }
 
+        public IQueryable<SportCountry> GetSingle(int? sportCountryId)
+        {
+            return _context.SportCountry.Where(x => x.SportCountryId == sportCountryId).AsQueryable();
+        }
+
         public void Update(SportCountry sportCountry)
         {
             _context.Entry(sportCountry).State = EntityState.Modified;

@@ -29,7 +29,7 @@ namespace Sports_Api.Services
           return  _betTypeMarketRepository.Find(betTypeMarketId);
         }
 
-        public IQueryable<BetTypeMarket> Get(int? betTypeMarketId)
+        public IQueryable<BetTypeMarketVm> Get(int? betTypeMarketId)
         {
             return _betTypeMarketRepository.Get(betTypeMarketId);
         }

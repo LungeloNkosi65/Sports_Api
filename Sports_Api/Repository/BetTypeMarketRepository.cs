@@ -33,9 +33,11 @@ namespace Sports_Api.Repository
             return _context.BetTypeMarket.Find(betTypeMarketId);
         }
 
-        public IQueryable<BetTypeMarket> Get(int? betTypeMarketId)
+        public IQueryable<BetTypeMarketVm> Get(int? betTypeMarketId)
         {
-            return _context.BetTypeMarket.Where(x => x.BetTypeMarketId == betTypeMarketId).AsQueryable();
+         string   commandText = $"[dbo].[BetType_Market_Single] @betTypeMarketId={betTypeMarketId}";
+            return ExecteSql(commandText);
+
         }
 
         public IQueryable<BetTypeMarket> GetAll()

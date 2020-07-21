@@ -36,8 +36,9 @@ namespace Sports_Api
         public virtual DbSet<BetTypeMarketVm> BetTypeMarketVms { get; set; }
         public virtual DbSet<TournamentBetTypeVm> TournamentBetTypeVms { get; set; }
         public virtual DbSet<SportsTournamentVm> SportsTournamentVms { get; set; }
+        public virtual DbSet<EventVm> EventVm { get; set; }
 
-        
+
 
 
 
@@ -70,11 +71,7 @@ namespace Sports_Api
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
-                entity.Property(e => e.Odds).HasColumnType("decimal(18, 2)");
 
-                entity.Property(e => e.Payout).HasColumnType("decimal(18, 2)");
-
-                entity.Property(e => e.Stake).HasColumnType("decimal(18, 2)");
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(50)
@@ -103,7 +100,7 @@ namespace Sports_Api
 
                 entity.HasOne(d => d.Markert)
                     .WithMany(p => p.BetTbl)
-                    .HasForeignKey(d => d.MarkertId)
+                    .HasForeignKey(d => d.MarketId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Bet_tbl_Market");
 

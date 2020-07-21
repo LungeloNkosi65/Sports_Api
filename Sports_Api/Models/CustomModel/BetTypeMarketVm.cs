@@ -10,6 +10,7 @@ namespace Sports_Api.Models.CustomModel
     {
         [Key]
         public int BetTypeMarketId { get; set; }
+        public string BetTypeMarketCode { get; set; }
         public int BetTypeId { get; set; }
         public string BetTypeName { get; set; }
         public int MarketId { get; set; }

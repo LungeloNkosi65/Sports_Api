@@ -12,6 +12,8 @@ namespace Sports_Api.Services
         void delete(int? sportCountryId);
         void Update(SportCountry sportCountry);
         IQueryable<SportCountry> Get();
+        IQueryable<SportCountry> GetSingle(int? sportCountryId);
+
         IQueryable<SportCountryViewModel> ViewGet();
     }
 }

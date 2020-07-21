@@ -30,6 +30,11 @@ namespace Sports_Api.Services
             return _sportCountry.Get();
         }
 
+        public IQueryable<SportCountry> GetSingle(int? sportCountryId)
+        {
+              return _sportCountry.GetSingle(sportCountryId);
+        }
+
         public void Update(SportCountry sportCountry)
         {
             _sportCountry.Update(sportCountry);

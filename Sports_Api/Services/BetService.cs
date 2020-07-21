@@ -24,6 +24,16 @@ namespace Sports_Api.Services
             return _betRepository.Find(betId);
         }
 
+        public IQueryable<BetTbl> GetBetEvents()
+        {
+            return _betRepository.GetBetEvents();
+        }
+
+        public IQueryable<BetSlip> GetBets()
+        {
+            return _betRepository.GetBets();
+        }
+
         public void PlaceBet(SubmitedBet submitedBet)
         {
             _betRepository.PlaceBet(submitedBet);

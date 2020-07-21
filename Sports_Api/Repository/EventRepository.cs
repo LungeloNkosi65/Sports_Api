@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Repository
 {
-    public class EventRepository : IEventRepository
+    public class EventRepository : IEventRepository 
     {
         private readonly HollywoodBetsRepDbContext _context;
         public EventRepository(HollywoodBetsRepDbContext hollywoodBetsRepDbContext)
@@ -27,6 +28,11 @@ namespace Sports_Api.Repository
             _context.SaveChanges();
         }
 
+        public IQueryable<Event> ExecuteSql()
+        {
+            throw new NotImplementedException();
+        }
+
         public Event Find(int? eventId)
         {
             return _context.Event.Find(eventId);
@@ -36,6 +42,13 @@ namespace Sports_Api.Repository
         {
             return _context.Event;
         }
+        public IQueryable<EventVm> GetAllVm()
+        {
+            string commandText = "[dbo].[Event_Ids] ";
+            return ExecuteSqlVm(commandText);
+        }
+
+
 
         public IQueryable<Event> GetEventsForTournament(int? tournamentId)
         {
@@ -58,5 +71,12 @@ namespace Sports_Api.Repository
         {
             return _context.Event.FromSqlRaw($"{commandText}");
         }
+
+
+        private IQueryable<EventVm> ExecuteSqlVm(string commandText)
+        {
+            return _context.EventVm.FromSqlRaw($"{commandText}").AsQueryable();
+        }
+
     }
 }

@@ -26,6 +26,34 @@ namespace Sports_Api.Controllers
         }
       
         [HttpGet]
+        public IActionResult GetSingleTournament(int? tournamentId)
+        {
+            try
+            {
+                if (tournamentId.HasValue)
+                {
+                    var results = _tournamentService.GetSingleTournament(tournamentId).ToList();
+                    if (results.Any())
+                    {
+                        return Ok(results);
+                    }
+                    else
+                    {
+                        return NotFound("Record was not found");
+                    }
+                }
+                else
+                {
+                    return BadRequest("There was an error while processing your request");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"There was an error while processing your request {ex}");
+            }
+        }
+        [HttpGet]
+        [Route("GetAll")]
         public IActionResult Get()
         {
             return Ok(_tournamentService.Get());
@@ -51,13 +79,11 @@ namespace Sports_Api.Controllers
                     }
                 }
                     return NotFound("Record not found");
-
             }
             catch (Exception ex)
             {
                 _logger.LogError("Get request for specific tournaments failed", ex);
                 return BadRequest("There was a problem findind the record please try again");
-                
             }
         }
 
@@ -73,7 +99,7 @@ namespace Sports_Api.Controllers
             catch (Exception ex)
             {  
                     _logger.LogError($"Post Request failed for tornament", ex);
-                return BadRequest("Invalid tournament object submited");
+                return BadRequest($"Invalid tournament object submited {ex}");
             }
         }
 

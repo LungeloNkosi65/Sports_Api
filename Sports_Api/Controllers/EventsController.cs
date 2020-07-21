@@ -54,7 +54,7 @@ namespace Sports_Api.Controllers
         {
             try
             {
-                var results = _eventService.Get().ToList();
+                var results = _eventService.GetAllVm().ToList();
                 if (results.Any())
                 {
                     return Ok(results);
@@ -69,7 +69,8 @@ namespace Sports_Api.Controllers
             {
 
                 return BadRequest($"There was an error processing your request {ex}");
-            }        }
+            }       
+        }
         [HttpGet]
         [Route("EventsForTournament")]
         public IActionResult GetEventsForTournament(int? tournamentId)

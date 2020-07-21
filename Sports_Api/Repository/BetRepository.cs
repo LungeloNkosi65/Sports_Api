@@ -26,6 +26,16 @@ namespace Sports_Api.Repository
             return _context.BetTbl.Find(betId);
         }
 
+        public IQueryable<BetSlip> GetBets()
+        {
+            return _context.BetSlip.AsQueryable();
+        }
+
+        public IQueryable<BetTbl> GetBetEvents()
+        {
+            return _context.BetTbl.AsQueryable();
+        }
+
         //public void PlaceBet(BetTbl betTbl)
         //{
         //    _context.BetTbl.Add(betTbl);
@@ -34,14 +44,18 @@ namespace Sports_Api.Repository
 
         public void PlaceBet(SubmitedBet submitedBet)
         {
-            _context.BetSlip.Add(submitedBet.BetSlip);
 
-            for(int i=0; i < submitedBet.BetTbls.Count(); i++)
+            _context.BetSlip.Add(submitedBet.BetSlip);
+            _context.SaveChanges();
+
+            for(int i=0; i < submitedBet.BetTbls.Length; i++)
             {
+                //submitedBet.BetTbls[i].BetId = GetBetEvents().Count()-1+1;
                 submitedBet.BetTbls[i].Date = DateTime.Now.Date;
                 _context.BetTbl.Add(submitedBet.BetTbls[i]);
+                _context.SaveChanges();
+
             }
-            _context.SaveChanges();
         }
 
         public IQueryable<BetTbl> RecentBets(string accountNumber)

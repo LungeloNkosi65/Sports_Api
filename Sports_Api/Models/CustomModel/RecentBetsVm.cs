@@ -5,9 +5,7 @@ using System.Threading.Tasks;
 
 namespace Sports_Api.Models.CustomModel
 {
-    public class SubmitedBet
+    public class RecentBetsVm
     {
-        public BetSlip BetSlip { get; set; }
-        public BetTbl [] BetTbls { get; set; }
     }
 }
