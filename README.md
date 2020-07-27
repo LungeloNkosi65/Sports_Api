@@ -10,6 +10,9 @@ The project is structured in a Repository -- Service -- Controller way where eac
 database(CRUD), then the Service communicates with the controller action methods to handle the http requests.
 
 ##Table Structure
+[
+![Main Table Structure](https://user-images.githubusercontent.com/49978441/88566357-2e310f80-d036-11ea-9be8-c3bd0e37e5f5.png)
+](url)
 
 
 
