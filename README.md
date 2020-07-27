@@ -1,4 +1,4 @@
-     HollywoodbetsAPI
+##HollywoodbetsAPI
 
 THe Hollywoodbet Sports Api is built using DotNet Core and uses Entity Framework Core as an ORM. The project handles the mapping of sports, countries, tournaments, events, 
 bet types and their markets, finally it handles the oods for the specific markets which are different for every event.  The final process the project handles is the bet stricking.
