@@ -34,7 +34,8 @@ https://github.com/LungeloNkosi65/SportAdmin-Front.git
 
 # Flow Diagram
 
-![Flow-Diagram](https://user-images.githubusercontent.com/49978441/88675345-241d1880-d0eb-11ea-8c71-5cd2852bfa43.png)
+![Anotation-Diagram](https://user-images.githubusercontent.com/49978441/88676155-08fed880-d0ec-11ea-844c-0e9785bb3d09.png)
+
 
 
 
