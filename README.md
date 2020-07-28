@@ -29,9 +29,8 @@ https://github.com/LungeloNkosi65/SportAdmin-Front.git
 # Table Structure
 
 
-[
-![Main Table Structure](https://user-images.githubusercontent.com/49978441/88566357-2e310f80-d036-11ea-9be8-c3bd0e37e5f5.png)
-](url)
+[New Sport Table Structure.pdf](https://github.com/LungeloNkosi65/Sports_Api/files/4987608/New.Sport.Table.Structure.pdf)
+
 
 
 
