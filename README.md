@@ -6,7 +6,7 @@ The data brought back by the sport api is displayed and manipulated in a separat
 
 # Project Structure
 
-The project is structured in a Models -- Repository -- Service -- Controller way where each part is in a separate folder. The repositories handle everything related to the
+The project is structured in a Models -- Repository -- Service -- Controller parten where each part is in a separate folder. The repositories handle everything related to the
 database(CRUD), then the Service communicates with the controller action methods to handle the http requests.
 
 
