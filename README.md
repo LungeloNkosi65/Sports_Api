@@ -32,6 +32,12 @@ https://github.com/LungeloNkosi65/SportAdmin-Front.git
 ![New Table Structure](https://user-images.githubusercontent.com/49978441/88653736-beba2f00-d0cc-11ea-8a35-62daaff14e28.png)
 
 
+# Flow Diagram
+
+![Flow-Diagram](https://user-images.githubusercontent.com/49978441/88675345-241d1880-d0eb-11ea-8c71-5cd2852bfa43.png)
+
+
+
 
 
 
