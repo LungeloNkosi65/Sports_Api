@@ -6,8 +6,21 @@ The data brought back by the sport api is displayed and manipulated in a separat
 
 # Project Structure
 
-The project is structured in a Repository -- Service -- Controller way where each part is in a separate folder. The repositories handle everything related to the
+The project is structured in a Models -- Repository -- Service -- Controller way where each part is in a separate folder. The repositories handle everything related to the
 database(CRUD), then the Service communicates with the controller action methods to handle the http requests.
+
+
+
+# Project Flow
+
+The site reads from the api and then the api gets the data from the database. The admin site does the crud for the database and it reflects on the main bet stricking site.
+
+![Events1](https://user-images.githubusercontent.com/49978441/88652171-bfea5c80-d0ca-11ea-95e3-8f34e20bd4bd.png)
+
+
+![Sport Admin](https://user-images.githubusercontent.com/49978441/88652321-f32ceb80-d0ca-11ea-828a-a391c02e0aff.png)
+![Sport Admin-Add](https://user-images.githubusercontent.com/49978441/88652326-f45e1880-d0ca-11ea-9983-45da71267a1c.png)
+
 
 # Table Structure
 
