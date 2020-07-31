@@ -88,7 +88,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpPost]
-        public  IActionResult Create (Tournament tournament)
+        public  IActionResult Create ([FromBody]Tournament tournament)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(int ? tournamentId,Tournament tournament)
+        public IActionResult Update(int ? tournamentId, [FromBody]Tournament tournament)
         {
             try
             {

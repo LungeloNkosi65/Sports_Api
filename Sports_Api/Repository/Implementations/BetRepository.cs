@@ -1,4 +1,5 @@
-﻿using Sports_Api.Models.CustomModel;
+﻿using Microsoft.EntityFrameworkCore;
+using Sports_Api.Models.CustomModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,21 +37,18 @@ namespace Sports_Api.Repository
             return _context.BetTbl.AsQueryable();
         }
 
-        //public void PlaceBet(BetTbl betTbl)
-        //{
-        //    _context.BetTbl.Add(betTbl);
-        //    _context.SaveChanges();
-        //}
+       
 
         public void PlaceBet(SubmitedBet submitedBet)
         {
-
+            
             _context.BetSlip.Add(submitedBet.BetSlip);
             _context.SaveChanges();
 
             for(int i=0; i < submitedBet.BetTbls.Length; i++)
             {
                 //submitedBet.BetTbls[i].BetId = GetBetEvents().Count()-1+1;
+                submitedBet.BetTbls[i].TicketNumber = Guid.NewGuid().ToString();
                 submitedBet.BetTbls[i].Date = DateTime.Now.Date;
                 _context.BetTbl.Add(submitedBet.BetTbls[i]);
                 _context.SaveChanges();
@@ -64,5 +62,18 @@ namespace Sports_Api.Repository
             //return resuts;
             throw new NotImplementedException();
         }
+
+        public IQueryable<RecentBetsVm> GetRecentBets(string userAccount)
+        {
+            string commandText = $"[dbo].[RecentBets] @account={userAccount}";
+            return ExecuteSql(commandText);
+        }
+
+        private IQueryable<RecentBetsVm>ExecuteSql(string sqlStatement)
+        {
+            return _context.RecentBetsVms.FromSqlRaw($"{sqlStatement}").AsQueryable();
+        }
+
+        
     }
 }

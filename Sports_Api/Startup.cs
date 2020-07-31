@@ -12,7 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Sports_Api.Repository;
+using Sports_Api.Repository.Implementations;
+using Sports_Api.Repository.Interfaces;
 using Sports_Api.Services;
+using Sports_Api.Services.Implementations;
+using Sports_Api.Services.Interfaces;
 
 namespace Sports_Api
 {
@@ -72,7 +76,8 @@ namespace Sports_Api
             services.AddScoped<IOddsDefaultService, OddsDefaultService>();
             services.AddScoped<IBetTypeMarketRepository, BetTypeMarketRepository>();
             services.AddScoped<IBetTypeMarketService, BetTypeMarketService>();
-
+            services.AddScoped<ISoccerCuponRepository, SoccerCuponRepository>();
+            services.AddScoped<ISoccerCuponService, SoccerCuponService>();
 
         }
 

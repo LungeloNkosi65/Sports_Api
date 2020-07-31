@@ -37,6 +37,8 @@ namespace Sports_Api
         public virtual DbSet<TournamentBetTypeVm> TournamentBetTypeVms { get; set; }
         public virtual DbSet<SportsTournamentVm> SportsTournamentVms { get; set; }
         public virtual DbSet<EventVm> EventVm { get; set; }
+        public virtual DbSet<RecentBetsVm> RecentBetsVms { get; set; }
+        public virtual DbSet<SoccerCupon> SoccerCupons { get; set; }
 
 
 

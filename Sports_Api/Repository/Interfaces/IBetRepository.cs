@@ -15,5 +15,7 @@ namespace Sports_Api.Repository
         IQueryable<BetTbl> GetBetEvents();
 
         BetTbl Find(int? betId);
+
+        IQueryable<RecentBetsVm> GetRecentBets(string userAccount);
     }
 }

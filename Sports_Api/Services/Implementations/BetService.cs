@@ -19,9 +19,19 @@ namespace Sports_Api.Services
             _betRepository.CancellBet(betId);
         }
 
+        public IQueryable<RecentBetsVm> FilterBets(string userAccount, DateTime? startDate, DateTime? endDate)
+        {
+            var dbRecord = GetRecentBets(userAccount);
+            //if (endDate == null)
+            //{
+            //    //return dbRecord.Where(x=>x.Date betw)
+            //}
+            return dbRecord;
+        }
+
         public BetTbl Find(int? betId)
         {
-            return _betRepository.Find(betId);
+            throw new NotImplementedException();
         }
 
         public IQueryable<BetTbl> GetBetEvents()
@@ -32,6 +42,11 @@ namespace Sports_Api.Services
         public IQueryable<BetSlip> GetBets()
         {
             return _betRepository.GetBets();
+        }
+
+        public IQueryable<RecentBetsVm> GetRecentBets(string userAccount)
+        {
+            return _betRepository.GetRecentBets(userAccount);
         }
 
         public void PlaceBet(SubmitedBet submitedBet)

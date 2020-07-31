@@ -72,13 +72,13 @@ namespace Sports_Api.Controllers
 
         [HttpGet]
         [Route("RecentBets")]
-        public IActionResult GetRecentBets(string accountNumber)
+        public IActionResult GetRecentBets(string? accountNumber)
         {
             try
             {
                 if (!String.IsNullOrWhiteSpace(accountNumber))
                 {
-                    var result = _betService.RecentBets(accountNumber).ToList();
+                    var result = _betService.GetRecentBets(accountNumber).ToList();
                     if (result.Any())
                     {
                         return Ok(result);
@@ -98,6 +98,13 @@ namespace Sports_Api.Controllers
                 return BadRequest($"There was an error trying to process request {ex}");
             }
         }
+
+        //[HttpGet]
+        //[Route("FilterBets")]
+        //public IActionResult FilterBets(string? accountNumber,DateTime? startDate,DateTime? endDate)
+        //{
+
+        //}
 
         [HttpPut]
         public IActionResult CancellBet(int? betId)

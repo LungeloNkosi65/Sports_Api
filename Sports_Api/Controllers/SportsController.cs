@@ -72,7 +72,7 @@ namespace Sports_Api.Controllers
                 }
                 else
                 {
-                    _logger.LogInformation("Record successfully added to database on SportsTree Table");
+                    _logger.LogInformation("Record successfully added");
                     _sportService.Add(sportsTree);
                     return Ok(sportsTree);
                 }
