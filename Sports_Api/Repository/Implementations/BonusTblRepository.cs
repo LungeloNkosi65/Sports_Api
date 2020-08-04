@@ -44,7 +44,7 @@ namespace Sports_Api.Repository.Implementations
         public IQueryable<BonusTbl> GetSingle(int? bonusId)
         {
             string commandText = $"[dbo].[GetSIngleBonus]  @bonusId={bonusId}";
-            return ExecuteSql(commandText);
+            return ExecuteSql(commandText).AsQueryable();
         }
 
         public void update(BonusTbl bonusTbl)

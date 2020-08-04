@@ -54,7 +54,7 @@ namespace Sports_Api.Controllers
             {
                 if (bonusId.HasValue)
                 {
-                    var results = _bonusTblService.GetSingle(bonusId);
+                    var results = _bonusTblService.GetSingle(bonusId).ToList();
                     if (results.Any())
                     {
                         return Ok(results);
