@@ -78,6 +78,8 @@ namespace Sports_Api
             services.AddScoped<IBetTypeMarketService, BetTypeMarketService>();
             services.AddScoped<ISoccerCuponRepository, SoccerCuponRepository>();
             services.AddScoped<ISoccerCuponService, SoccerCuponService>();
+            services.AddScoped<IBonusTblRepository, BonusTblRepository>();
+            services.AddScoped<IBonusTblService, BonusTblService>();
 
         }
 

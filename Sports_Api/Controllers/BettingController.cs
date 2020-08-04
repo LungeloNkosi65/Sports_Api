@@ -35,7 +35,6 @@ namespace Sports_Api.Controllers
                 }
                 else
                 {
-
                     return NotFound("There were no records found");
                 }
             }
@@ -59,7 +58,6 @@ namespace Sports_Api.Controllers
                 }
                 else
                 {
-
                     return NotFound("There were no records found");
                 }
             }
