@@ -10,7 +10,11 @@ namespace Sports_Api.Services.Implementations
 {
     public class SoccerCuponService : ISoccerCuponService
     {
-        private readonly ISoccerCuponRepository _soccerCuponRepository; 
+        private readonly ISoccerCuponRepository _soccerCuponRepository;
+        public SoccerCuponService(ISoccerCuponRepository soccerCuponRepository)
+        {
+            _soccerCuponRepository = soccerCuponRepository;
+        }
         public IQueryable<SoccerCupon> GetCupon()
         {
             return _soccerCuponRepository.GetCupon();

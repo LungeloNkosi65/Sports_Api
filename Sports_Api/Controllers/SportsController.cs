@@ -18,7 +18,7 @@ namespace Sports_Api.Controllers
 
         private readonly ISportService _sportService;
         private readonly ILogger<SportsController> _logger;
-        public SportsController(ISportService sportService,ILogger<SportsController> logger)
+        public SportsController(ISportService sportService, ILogger<SportsController> logger)
         {
             _sportService = sportService;
             _logger = logger;
@@ -26,7 +26,7 @@ namespace Sports_Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-             var result=_sportService.Get();
+            var result = _sportService.Get();
             return Ok(result);
         }
 
@@ -44,7 +44,7 @@ namespace Sports_Api.Controllers
                         _logger.LogInformation("Sports Successfully retreived");
                         return Ok(result);
                     }
-                    else 
+                    else
                     {
                         _logger.LogError($"Get request for sport unsuccessfull record not found on the Db");
                         return NotFound("Record not found");
@@ -57,7 +57,7 @@ namespace Sports_Api.Controllers
             }
             catch (Exception ex)
             {
-                throw new ArgumentNullException("Invalid Id");
+                return BadRequest($"There was an error while processing your request {ex}");
             }
         }
         [HttpPost]
@@ -74,18 +74,18 @@ namespace Sports_Api.Controllers
                 {
                     _logger.LogInformation("Record successfully added");
                     _sportService.Add(sportsTree);
-                    return Ok(sportsTree);
+                    return Ok("Record successfully added");
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError("Create operation failed",ex);
-                throw new  ArgumentException("Invalid data submited");
+                _logger.LogError("Create operation failed", ex);
+                return BadRequest($"There was an error while processing your request {ex}");
             }
         }
 
         [HttpDelete]
-        public IActionResult Delete(int ? sportId)
+        public IActionResult Delete(int? sportId)
         {
             try
             {
@@ -111,12 +111,12 @@ namespace Sports_Api.Controllers
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _logger.LogError("An error occured ", ex);
+                return BadRequest($"There was an error while processing your request {ex}");
             }
         }
         [HttpPut]
-        public IActionResult Update(int? sportId,SportsTree sportsTree)
+        public IActionResult Update(int? sportId, SportsTree sportsTree)
         {
             try
             {
@@ -134,8 +134,8 @@ namespace Sports_Api.Controllers
             }
             catch (Exception ex)
             {
-               _logger.LogError($"Update operation failed ",ex);
-                throw ex;
+                _logger.LogError($"Update operation failed ", ex);
+                return BadRequest($"There was an error while processing your request {ex}");
             }
         }
 

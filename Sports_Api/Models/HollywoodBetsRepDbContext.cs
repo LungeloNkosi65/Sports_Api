@@ -50,7 +50,7 @@ namespace Sports_Api
         {
             modelBuilder.Entity<BetSlip>(entity =>
             {
-                entity.Property(e => e.BetSlipId).ValueGeneratedNever();
+                entity.Property(e => e.BetSlipId).UseIdentityColumn();
 
                 entity.Property(e => e.Odds).HasColumnType("decimal(18, 0)");
 
@@ -69,7 +69,7 @@ namespace Sports_Api
 
                 entity.ToTable("Bet_tbl");
 
-                entity.Property(e => e.BetId).ValueGeneratedNever();
+                entity.Property(e => e.BetId).UseIdentityColumn();
 
                 entity.Property(e => e.Date).HasColumnType("datetime");
 
@@ -121,7 +121,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<BetType>(entity =>
             {
-                entity.Property(e => e.BetTypeId).ValueGeneratedNever();
+                entity.Property(e => e.BetTypeId).UseIdentityColumn();
 
                 entity.Property(e => e.BetTypeName)
                     .IsRequired()
@@ -131,7 +131,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<BetTypeMarket>(entity =>
             {
-                entity.Property(e => e.BetTypeMarketId).ValueGeneratedNever();
+                entity.Property(e => e.BetTypeMarketId).UseIdentityColumn();
 
                 entity.HasOne(d => d.BetType)
                     .WithMany(p => p.BetTypeMarket)
@@ -152,14 +152,14 @@ namespace Sports_Api
 
                 entity.ToTable("Bonus_tbl");
 
-                entity.Property(e => e.BonusId).ValueGeneratedNever();
+                entity.Property(e => e.BonusId).UseIdentityColumn();
 
                 entity.Property(e => e.BonusPercent).HasColumnType("decimal(18, 2)");
             });
 
             modelBuilder.Entity<Country>(entity =>
             {
-                entity.Property(e => e.CountryId).ValueGeneratedNever();
+                entity.Property(e => e.CountryId).UseIdentityColumn();
 
                 entity.Property(e => e.CountryName)
                     .IsRequired()
@@ -173,7 +173,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<Event>(entity =>
             {
-                entity.Property(e => e.EventId).ValueGeneratedNever();
+                entity.Property(e => e.EventId).UseIdentityColumn();
 
                 entity.Property(e => e.EeventDate).HasColumnType("date");
 
@@ -191,7 +191,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<Market>(entity =>
             {
-                entity.Property(e => e.MarketId).ValueGeneratedNever();
+                entity.Property(e => e.MarketId).UseIdentityColumn();
 
                 entity.Property(e => e.MarketName)
                     .IsRequired()
@@ -203,7 +203,7 @@ namespace Sports_Api
             {
                 entity.HasKey(e => e.OddId);
 
-                entity.Property(e => e.OddId).ValueGeneratedNever();
+                entity.Property(e => e.OddId).UseIdentityColumn();
 
                 entity.Property(e => e.Odds1)
                     .HasColumnName("Odds")
@@ -224,7 +224,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<SportCountry>(entity =>
             {
-                entity.Property(e => e.SportCountryId).ValueGeneratedNever();
+                entity.Property(e => e.SportCountryId).UseIdentityColumn();
 
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.SportCountry)
@@ -243,7 +243,7 @@ namespace Sports_Api
             {
                 entity.HasKey(e => e.SportTourtnamentId);
 
-                entity.Property(e => e.SportTourtnamentId).ValueGeneratedNever();
+                entity.Property(e => e.SportTourtnamentId).UseIdentityColumn();
 
                 entity.HasOne(d => d.Country)
                     .WithMany(p => p.SportsTournament)
@@ -268,7 +268,7 @@ namespace Sports_Api
             {
                 entity.HasKey(e => e.SportId);
 
-                entity.Property(e => e.SportId).ValueGeneratedNever();
+                entity.Property(e => e.SportId).UseIdentityColumn();
 
                 entity.Property(e => e.Logo)
                     .HasMaxLength(100)
@@ -282,7 +282,7 @@ namespace Sports_Api
 
             modelBuilder.Entity<Tournament>(entity =>
             {
-                entity.Property(e => e.TournamentId).ValueGeneratedNever();
+                entity.Property(e => e.TournamentId).UseIdentityColumn();
 
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -296,7 +296,7 @@ namespace Sports_Api
 
                 entity.Property(e => e.TbTid)
                     .HasColumnName("TbTId")
-                    .ValueGeneratedNever();
+                    .UseIdentityColumn();
 
                 entity.HasOne(d => d.BetType)
                     .WithMany(p => p.TournamentBetType)
