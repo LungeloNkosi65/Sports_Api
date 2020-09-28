@@ -1,0 +1,43 @@
+2020-09-09 12:00:36,672  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-09 12:00:36,794  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-09 12:00:36,810  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-09 12:00:38,704  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-09 12:00:38,710  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-09 12:00:38,715  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-09 12:00:38,720  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-09 12:00:38,726  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-09 12:05:13,664  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-09-09 12:05:13,853  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Post Api Call on SportCountry table successesfull
+ 2020-09-09 12:05:25,639  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:07:22,310  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament record updated
+ 2020-09-09 12:07:43,252  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament record updated
+ 2020-09-09 12:08:08,163  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:08:47,895  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:10:54,126  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-09 12:11:30,688  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-09 12:11:54,565  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:12:05,270  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:12:40,187  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record successfully created
+ 2020-09-09 12:13:13,304  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:13:48,716  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:13:58,643  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:17:03,661  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:19:28,970  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:19:47,184  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-09 12:20:17,457  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-09 12:20:36,688  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-09 12:20:52,526  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:21:06,749  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:21:17,489  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:21:31,268  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:21:42,099  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:21:53,603  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:22:22,687  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record successfully created
+ 2020-09-09 12:23:05,361  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Update Request: successfull
+ 2020-09-09 12:23:13,174  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Update Request: successfull
+ 2020-09-09 12:24:19,891  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record successfully created
+ 2020-09-09 12:24:52,570  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:25:02,862  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:25:19,471  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-09 12:38:52,849  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 

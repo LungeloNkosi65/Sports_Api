@@ -59,6 +59,7 @@ namespace Sports_Api.Controllers
             return Ok(_tournamentService.Get());
         }
 
+        [HttpGet]
         [Route("TournamentForSport")]
         public IActionResult GetTournaments(int? sportId, int? countryId)
         {

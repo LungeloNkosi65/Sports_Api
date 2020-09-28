@@ -1,0 +1,17 @@
+2020-08-17 09:10:03,127  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-08-17 09:10:03,156  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-08-17 09:10:03,162  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\Source\Repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-08-17 09:10:05,039  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-08-17 09:10:05,048  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-08-17 09:10:05,056  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-08-17 09:10:05,063  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-08-17 09:10:05,080  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-08-17 09:12:16,929  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully added
+ 2020-08-17 09:12:26,215  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-08-17 09:12:48,012  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-08-17 09:12:48,061  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Post Api Call on SportCountry table successesfull
+ 2020-08-17 09:13:03,334  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Sport Removed from Country successfully
+ 2020-08-17 09:14:46,807  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-08-17 09:14:46,828  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Post Api Call on SportCountry table successesfull
+ 2020-08-17 09:18:13,005  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Sport Removed from Country successfully
+ 

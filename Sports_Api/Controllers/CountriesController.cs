@@ -108,7 +108,7 @@ namespace Sports_Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError("Create operation failed on Countries table", ex);
+                //_logger.LogError("Create operation failed on Countries table", ex);
                 return BadRequest($"There was an error trying nto process the request {ex}");
             }
         }

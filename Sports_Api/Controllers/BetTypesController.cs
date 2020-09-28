@@ -22,7 +22,7 @@ namespace Sports_Api.Controllers
             _logger = logger;
             _betTypeService = betTypeService;
         }
-        [HttpGet("tournamentId")]
+        [HttpGet]
         [Route("BetTypeForTournament")]
         public IActionResult Get(int? tournamentId)
         {
@@ -54,6 +54,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpGet]
+        
         public IActionResult GetSingle(int? betTypeId)
         {
             try

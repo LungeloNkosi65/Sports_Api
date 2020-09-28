@@ -94,7 +94,8 @@ namespace Sports_Api.Controllers
                     var dbRecord = _sportService.Find(sportId);
                     if (dbRecord == null)
                     {
-                        _logger.LogError("delete operation failed");
+                        _logger.LogError("delet" +
+                            "e operation failed");
                         return BadRequest("Record not found");
                     }
                     else

@@ -8,7 +8,7 @@ namespace Sports_Api.Services
 {
    public  interface ISportCountryService
     {
-        void Add(SportCountry sportCountry);
+        bool Add(SportCountry sportCountry);
         void delete(int? sportCountryId);
         void Update(SportCountry sportCountry);
         IQueryable<SportCountry> Get();

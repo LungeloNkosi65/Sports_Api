@@ -49,7 +49,7 @@ namespace Sports_Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(int sportId)
+        public IActionResult Get(int? sportId)
         {
             try
             {
@@ -114,9 +114,16 @@ namespace Sports_Api.Controllers
             {
                 if(sportCountry != null)
                 {
-                    _sportCountryService.Add(sportCountry);
-                    _logger.LogInformation("Post Api Call on SportCountry table successesfull");
-                    return Ok("Record succesfullly added"+ sportCountry);
+                   var results= _sportCountryService.Add(sportCountry);
+                    if (results == false)
+                    {
+                        return Ok("You can not link a sport with country more than once ");
+                    }
+                    else
+                    {
+                        _logger.LogInformation("Post Api Call on SportCountry table successesfull");
+                        return Ok("Record succesfullly added" );
+                    }
                 }
                 else
                 {

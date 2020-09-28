@@ -41,7 +41,6 @@ namespace Sports_Api.Repository
         {
                 string commandText = $"[dbo].[GetBetTypesForTournament] @tournamentId={tournamentId}";
                 return ExecuteSql(commandText);
-
         }
 
         public IQueryable<BetType> GetSingle(int? betTypeId)

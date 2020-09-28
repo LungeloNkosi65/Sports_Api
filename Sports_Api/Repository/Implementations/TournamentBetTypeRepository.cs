@@ -51,7 +51,7 @@ namespace Sports_Api.Repository
 
         public void Update(TournamentBetType tournamentBetType)
         {
-            _context.Entry(tournamentBetType);
+            _context.Entry(tournamentBetType).State=EntityState.Modified;
             _context.SaveChanges();
         }
         private IQueryable<TournamentBetTypeVm>ExecuteSql(string commandText)

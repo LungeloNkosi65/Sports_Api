@@ -1,0 +1,128 @@
+2020-09-06 19:49:29,842  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-06 19:49:29,867  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-06 19:49:29,871  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-06 19:49:31,666  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:49:31,675  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:49:31,682  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:49:31,687  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:49:31,691  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:11,426  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-06 19:54:11,447  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-06 19:54:11,450  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-06 19:54:12,338  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:12,391  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:12,404  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:12,451  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:12,505  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:54:41,418 ERROR Microsoft.EntityFrameworkCore.Query.? [?] - MESSAGE: An exception occurred while iterating over the results of a query for context type 'Sports_Api.HollywoodBetsRepDbContext'.
+System.InvalidOperationException: No mapping to a relational type can be found for the CLR type '<>f__AnonymousType0<Nullable<int>>'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ System.InvalidOperationException: No mapping to a relational type can be found for the CLR type '<>f__AnonymousType0<Nullable<int>>'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+2020-09-06 19:56:55,879  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-06 19:56:55,922  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-06 19:56:55,930  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-06 19:56:57,759  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:56:57,768  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:56:57,775  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:56:57,783  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:56:57,790  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:58:19,117 ERROR Microsoft.EntityFrameworkCore.Query.? [?] - MESSAGE: An exception occurred while iterating over the results of a query for context type 'Sports_Api.HollywoodBetsRepDbContext'.
+System.InvalidOperationException: No mapping to a relational type can be found for the CLR type 'Nullable<int>[]'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ System.InvalidOperationException: No mapping to a relational type can be found for the CLR type 'Nullable<int>[]'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+2020-09-06 19:58:51,828  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-06 19:58:51,853  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-06 19:58:51,857  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-06 19:58:52,661  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:58:52,666  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:58:52,670  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:58:52,674  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:58:52,678  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 19:59:40,803 ERROR Microsoft.EntityFrameworkCore.Query.? [?] - MESSAGE: An exception occurred while iterating over the results of a query for context type 'Sports_Api.HollywoodBetsRepDbContext'.
+System.InvalidOperationException: No mapping to a relational type can be found for the CLR type '<>f__AnonymousType0<Nullable<int>>'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ System.InvalidOperationException: No mapping to a relational type can be found for the CLR type '<>f__AnonymousType0<Nullable<int>>'.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMapping(IRelationalTypeMappingSource typeMappingSource, Type clrType)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingSourceExtensions.GetMappingForValue(IRelationalTypeMappingSource typeMappingSource, Object value)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressionFactory.GetTypeMappingForValue(Object value)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.SqlExpressions.SelectExpression.VisitChildren(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.VisitExtension(Expression node)
+   at System.Linq.Expressions.Expression.Accept(ExpressionVisitor visitor)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.FromSqlParameterApplyingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterValueBasedSelectExpressionOptimizer.Optimize(SelectExpression selectExpression, IReadOnlyDictionary`2 parametersValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.RelationalCommandCache.GetRelationalCommand(IReadOnlyDictionary`2 parameters)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+2020-09-06 20:50:31,072  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-06 20:50:31,093  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-06 20:50:31,097  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-06 20:50:32,403  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 20:50:32,408  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 20:50:32,413  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 20:50:32,418  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-06 20:50:32,423  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 

@@ -1,0 +1,58 @@
+2020-09-08 08:04:45,797  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2020-09-08 08:04:45,902  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
+ 2020-09-08 08:04:45,969  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\Lungelo\source\repos\LungeloNkosi65\Sports_Api\Sports_Api
+ 2020-09-08 08:04:49,517  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'CustomOdds'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-08 08:04:49,527  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'OddsViewModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-08 08:04:49,540  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-08 08:04:49,553  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Payout' on entity type 'RecentBetsVm'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-08 08:04:49,621  WARN Microsoft.EntityFrameworkCore.Model.Validation.? [?] - MESSAGE: No type was specified for the decimal column 'Odds' on entity type 'SoccerCupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+ 2020-09-08 08:05:31,223  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-08 08:15:09,711  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully added
+ 2020-09-08 08:16:27,957  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament added to database
+ 2020-09-08 08:17:29,712  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-09-08 08:17:29,749  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Post Api Call on SportCountry table successesfull
+ 2020-09-08 08:17:48,556  INFO Sports_Api.Controllers.SportTournamentsController.? [?] - MESSAGE: Record successfully added
+ 2020-09-08 08:18:06,953  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record successfully created
+ 2020-09-08 08:18:12,746  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-08 08:19:04,411  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-08 08:27:38,464  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Post Request: Successull
+ 2020-09-08 08:27:50,045  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Post Request: Successull
+ 2020-09-08 08:28:26,871  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-08 08:28:42,482  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-08 08:42:20,900  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record with Id 25successfully deleted
+ 2020-09-08 08:42:33,103  INFO Sports_Api.Controllers.SportTournamentsController.? [?] - MESSAGE: Record successfully deleted
+ 2020-09-08 08:42:46,037  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Sport Removed from Country successfully
+ 2020-09-08 08:43:00,063  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Delete Request: succsessful
+ 2020-09-08 08:43:04,982  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Delete Request: succsessful
+ 2020-09-08 08:43:18,597  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Event with id 24 successfully deleted
+ 2020-09-08 08:43:26,503  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 26 deleted
+ 2020-09-08 08:43:33,718  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 2020-09-08 08:45:37,194  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully added
+ 2020-09-08 08:46:14,759  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Sports_Api.Tournament added to database
+ 2020-09-08 08:47:12,258  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-08 08:50:37,569  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Event with id 25 successfully deleted
+ 2020-09-08 08:51:51,771  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Post Request Successfull on Events Tabele
+ 2020-09-08 08:53:24,953  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Record with id 26 successfully updated
+ 2020-09-08 08:54:06,153  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Sports Successfully retreived
+ 2020-09-08 08:54:06,171  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Post Api Call on SportCountry table successesfull
+ 2020-09-08 08:54:26,862  INFO Sports_Api.Controllers.SportTournamentsController.? [?] - MESSAGE: Record successfully added
+ 2020-09-08 08:54:46,801  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record successfully created
+ 2020-09-08 08:54:57,266  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Post Request: Successull
+ 2020-09-08 08:55:05,969  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Post Request: Successull
+ 2020-09-08 08:55:33,093  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Delete Request: successfull
+ 2020-09-08 08:55:37,605  INFO Sports_Api.Controllers.BetTypeMarketsController.? [?] - MESSAGE: Delete Request: successfull
+ 2020-09-08 08:55:59,937  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-08 08:56:20,721  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Delete Request: succsessful
+ 2020-09-08 08:56:49,514  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-08 08:58:06,007  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-08 08:59:07,751  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Post call successfull on Odds table
+ 2020-09-08 09:11:13,094  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Get request for tournaments successfull
+ 2020-09-08 09:11:33,711  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Delete Request: succsessful
+ 2020-09-08 09:11:37,983  INFO Sports_Api.Controllers.OddsDefaultController.? [?] - MESSAGE: Delete Request: succsessful
+ 2020-09-08 09:11:54,321  INFO Sports_Api.Controllers.SportsCountriesController.? [?] - MESSAGE: Sport Removed from Country successfully
+ 2020-09-08 09:12:04,044  INFO Sports_Api.Controllers.SportTournamentsController.? [?] - MESSAGE: Record successfully deleted
+ 2020-09-08 09:12:13,096  INFO Sports_Api.Controllers.TournamentBetTypesController.? [?] - MESSAGE: Record with Id 26successfully deleted
+ 2020-09-08 09:12:31,854  INFO Sports_Api.Controllers.EventsController.? [?] - MESSAGE: Event with id 26 successfully deleted
+ 2020-09-08 09:12:40,613  INFO Sports_Api.Controllers.TournamentsController.? [?] - MESSAGE: Record 27 deleted
+ 2020-09-08 09:12:51,476  INFO Sports_Api.Controllers.SportsController.? [?] - MESSAGE: Record successfully deleted 
+ 

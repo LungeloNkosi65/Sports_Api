@@ -1,4 +1,5 @@
-﻿using Sports_Api.Models.CustomModel;
+﻿using Sports_Api.Logic.interfaces;
+using Sports_Api.Models.CustomModel;
 using Sports_Api.Repository;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,24 @@ namespace Sports_Api.Services
     public class SportCountryService : ISportCountryService
     {
         private readonly ISportCountryRepository _sportCountry;
+        private readonly IAssociationsBsLogic _associationsBsLogic;
 
-        public SportCountryService(ISportCountryRepository sportCountry)
+        public SportCountryService(ISportCountryRepository sportCountry, IAssociationsBsLogic associationsBsLogic)
         {
             _sportCountry = sportCountry;
+            _associationsBsLogic = associationsBsLogic;
         }
-        public void Add(SportCountry sportCountry)
+        public bool Add(SportCountry sportCountry)
         {
-            _sportCountry.Add(sportCountry);
+            if (_associationsBsLogic.IsExistingSportCountry(sportCountry)==false)
+            {
+                return false;
+            }
+            else
+            {
+                _sportCountry.Add(sportCountry);
+                return true;
+            }
         }
 
         public void delete(int? sportCountryId)

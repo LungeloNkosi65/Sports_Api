@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sports_Api.Logic.Implementations;
+using Sports_Api.Logic.interfaces;
 using Sports_Api.Repository;
 using Sports_Api.Repository.Implementations;
 using Sports_Api.Repository.Interfaces;
@@ -39,6 +41,7 @@ namespace Sports_Api
                        .AllowAnyHeader();
             }));
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddDbContext<HollywoodBetsRepDbContext>(options =>
                              options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddControllers().AddJsonOptions(options =>
@@ -50,6 +53,8 @@ namespace Sports_Api
             //services.AddControllers().AddNewtonsoftJson(options =>
             //options.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore
             //);
+            //services.AddScoped<IExecuteLogicQuery, ExecuteLogicQuery>();
+            services.AddScoped<IAssociationsBsLogic, AssociationsBsLogicL>();
             services.AddScoped<ISportRepository, SportRepository>();
             services.AddScoped<ISportService, SportService>();
             services.AddScoped<ICountryRepository, CountryRepository>();
@@ -92,7 +97,14 @@ namespace Sports_Api
             }
 
             app.UseHttpsRedirection();
-
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseAuthorization();
