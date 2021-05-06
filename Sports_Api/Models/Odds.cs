@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sports_Api
 {
     public partial class Odds
     {
+        [Key]
+
         public int OddId { get; set; }
         public int BetTypeMarketId { get; set; }
         public int EventId { get; set; }

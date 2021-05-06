@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sports_Api
 {
     public partial class SportsTournament
     {
+        [Key]
+        
         public int SportTourtnamentId { get; set; }
         public int SportId { get; set; }
         public int CountryId { get; set; }

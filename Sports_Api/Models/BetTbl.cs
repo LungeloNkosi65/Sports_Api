@@ -1,11 +1,13 @@
 ﻿using Sports_Api;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sports_Api
 {
     public partial class BetTbl
     {
+        [Key]
         public int BetId { get; set; }
         public int BetSlipId { get; set; }
         public int SportId { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sports_Api
 {
@@ -12,6 +13,7 @@ namespace Sports_Api
             TournamentBetType = new HashSet<TournamentBetType>();
         }
 
+        [Key]
         public int BetTypeId { get; set; }
         public string BetTypeName { get; set; }
 
